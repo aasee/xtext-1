@@ -54,3 +54,22 @@ public interface Entity extends EObject
 4) Usage of brackets in grammar statements (as Entity is used above in the superType) implies a cross-reference, and the XText editor will search the file for an element of that type.
 
 5) Access to the underlying EMF model is used for validation.
+
+6) Xtend notes:
+
+* Interoperable with Java
+* Less syntactic noise than Java
+* Terminating semicolons are optional
+* All method declarations must begin with "def" or "override". 
+* If a method is overriden, the keyword "override" is required.
+* All methods are public by default
+* Multiple top level types may be specified in a single file
+* Constructor names are simply "new"
+* Everything is an expression. This means return statements are also optional
+* Fields and local variables are declared using "val" for final fields and variables. "var" for non-final.
+* Method parameters are always final
+* The type of a variable can be inferred.
+* "==" translates to "equals". "===" is used for equality.
+* Instead of obj.getName(), you can simply use obj.name (even if "name" is private)
+* single or double quotes are allowed for strings
+
