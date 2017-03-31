@@ -6,9 +6,25 @@ Model: entities += Entity*;
 
 Entity:
 	'entity' name = ID ('extends' superType=[Entity])? '{'
-	 attributes += Attribute* 	
+	 attributes += Attribute* '}'	
 ;
 
 Attribute:
-	type=[Entity] (array?='[' ']')? name=ID ';'
+	type=AttributeType name=ID ';'
+;
+
+AttributeType:
+	elementType=ElementType (array?='[' (length=INT)? ']')? name=ID ';'
+;
+
+ElementType:
+	BasicType | EntityType
+;
+
+BasicType:
+	typeName=('string'|'int'|'boolean')
+;
+
+EntityType:
+	entity=[Entity]
 ;

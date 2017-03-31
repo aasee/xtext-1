@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.rmemory.xtext.entities.entities.Attribute#getType <em>Type</em>}</li>
- *   <li>{@link org.rmemory.xtext.entities.entities.Attribute#isArray <em>Array</em>}</li>
  *   <li>{@link org.rmemory.xtext.entities.entities.Attribute#getName <em>Name</em>}</li>
  * </ul>
  *
@@ -26,56 +25,30 @@ import org.eclipse.emf.ecore.EObject;
 public interface Attribute extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Type</b></em>' reference.
+   * Returns the value of the '<em><b>Type</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Type</em>' reference isn't clear,
+   * If the meaning of the '<em>Type</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Type</em>' reference.
-   * @see #setType(Entity)
+   * @return the value of the '<em>Type</em>' containment reference.
+   * @see #setType(AttributeType)
    * @see org.rmemory.xtext.entities.entities.EntitiesPackage#getAttribute_Type()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  Entity getType();
+  AttributeType getType();
 
   /**
-   * Sets the value of the '{@link org.rmemory.xtext.entities.entities.Attribute#getType <em>Type</em>}' reference.
+   * Sets the value of the '{@link org.rmemory.xtext.entities.entities.Attribute#getType <em>Type</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Type</em>' reference.
+   * @param value the new value of the '<em>Type</em>' containment reference.
    * @see #getType()
    * @generated
    */
-  void setType(Entity value);
-
-  /**
-   * Returns the value of the '<em><b>Array</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Array</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Array</em>' attribute.
-   * @see #setArray(boolean)
-   * @see org.rmemory.xtext.entities.entities.EntitiesPackage#getAttribute_Array()
-   * @model
-   * @generated
-   */
-  boolean isArray();
-
-  /**
-   * Sets the value of the '{@link org.rmemory.xtext.entities.entities.Attribute#isArray <em>Array</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Array</em>' attribute.
-   * @see #isArray()
-   * @generated
-   */
-  void setArray(boolean value);
+  void setType(AttributeType value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
