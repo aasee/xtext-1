@@ -6,7 +6,7 @@ https://www.devicetree.org/
 https://github.com/devicetree-org/devicetree-specification-released/blob/master/devicetree-specification-v0.1-20160524.pdf
 https://events.linuxfoundation.org/sites/events/files/slides/petazzoni-device-tree-dummies.pdf
 
-This repo contains my expirementation using XText, some based on examples, and some of my own. Unless otherwise stated, I am using XText 2.10.
+This repo contains my expirementation using XText, some based on examples from Bettni's book, and also some of my own. Unless otherwise stated, I am using XText 2.10.
 
 Misc Notes:
 ===============
@@ -72,4 +72,60 @@ public interface Entity extends EObject
 * "==" translates to "equals". "===" is used for equality.
 * Instead of obj.getName(), you can simply use obj.name (even if "name" is private)
 * single or double quotes are allowed for strings
+* Literals are specified with #[] syntax. For example,
+
+val aList = #["a", "b"] //creates a list
+val String[] anArray = #["a", "b"]
+val aSet = #{"a", "b"}
+val aMap = #{"a" -> 0, "b" -> 1}
+
+* . Xtend supports the concept of "extension methods", which is a mechanism that allows you to "add" new methods to existing types without modifying them (or more accurately, "extend" rather than "add"). 
+
+For example, lets say I have myClass.myNewMethod(SomeExistingType). And lets say the variable "e" is of type "SomeExistingType", then I can write this:
+
+e.myNewMethod() instead of myNewMethod(e), even though myNewMethod isn't definited in SomeExistingType. This allows call chains that look like this: o.foo().bar() instead of bar(foo(o))
+
+* Xtend also includes several utility classes and static methods which can be used as extension methods. For example, 
+
+"my string".toFirstUpper
+
+is the equivalent of 
+
+StringExtensions.toFirstUpper("my string")
+
+* The implicit variable – it
+
+Instead of this:
+def trans2(String s) {
+var it = s
+toLowerCase // it.toLowerCase
+}
+
+You can do this:
+
+def trans1(String it) {
+toLowerCase // it.toLowerCase
+}
+
+* Lamda expressions are anonymous objects which can be passed to methods or stored in a variable for later evaluation. They are somewhat comparable to a function pointer in C/C++ (although a lambda encapsulates both the method and variables).
+
+Xtend lambda expressions are declared using square brackets, []. The parameters and the body are seperated using a pipe symbol, |. The body of the lambda is executed by calling its apply method.
+
+The following code snippet defines a lambda expression, assigned to a local variable. It takes a string and an integer as parameters, return the string concatenation of the two, then evaluated by passing the two arguments
+
+val l = [ String s, int i | s + i ]
+println(l.apply("s", 10))
+
+These are equivalent:
+
+val (String, int)=>String l = [ String s, int i | s + i ]
+
+val (String, int)=>String l = [ s, i | s + i ]
+
+Function types are useful when declaring methods that take a lambda expression as a parameter (remember that the types of parameters must always be specified), for example:
+
+def execute((String, int)=>String f) {
+f.apply("s", 10)
+}
+
 
