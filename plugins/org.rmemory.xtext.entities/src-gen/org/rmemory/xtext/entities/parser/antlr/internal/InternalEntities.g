@@ -210,23 +210,29 @@ ruleAttribute returns [EObject current=null]
 		)
 		(
 			(
-				lv_array_1_0='[]'
-				{
-					newLeafNode(lv_array_1_0, grammarAccess.getAttributeAccess().getArrayLeftSquareBracketRightSquareBracketKeyword_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAttributeRule());
+				(
+					lv_array_1_0='['
+					{
+						newLeafNode(lv_array_1_0, grammarAccess.getAttributeAccess().getArrayLeftSquareBracketKeyword_1_0_0());
 					}
-					setWithLastConsumed($current, "array", true, "[]");
-				}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getAttributeRule());
+						}
+						setWithLastConsumed($current, "array", true, "[");
+					}
+				)
 			)
+			otherlv_2=']'
+			{
+				newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_1_1());
+			}
 		)?
 		(
 			(
-				lv_name_2_0=RULE_ID
+				lv_name_3_0=RULE_ID
 				{
-					newLeafNode(lv_name_2_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0());
+					newLeafNode(lv_name_3_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0());
 				}
 				{
 					if ($current==null) {
@@ -235,14 +241,14 @@ ruleAttribute returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_2_0,
+						lv_name_3_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
 		)
-		otherlv_3=';'
+		otherlv_4=';'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getSemicolonKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getSemicolonKeyword_3());
 		}
 	)
 ;

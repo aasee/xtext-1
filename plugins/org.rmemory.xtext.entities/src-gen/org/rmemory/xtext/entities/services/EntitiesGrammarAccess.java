@@ -99,17 +99,19 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cTypeEntityCrossReference_0_0 = (CrossReference)cTypeAssignment_0.eContents().get(0);
 		private final RuleCall cTypeEntityIDTerminalRuleCall_0_0_1 = (RuleCall)cTypeEntityCrossReference_0_0.eContents().get(1);
-		private final Assignment cArrayAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cArrayLeftSquareBracketRightSquareBracketKeyword_1_0 = (Keyword)cArrayAssignment_1.eContents().get(0);
+		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
+		private final Assignment cArrayAssignment_1_0 = (Assignment)cGroup_1.eContents().get(0);
+		private final Keyword cArrayLeftSquareBracketKeyword_1_0_0 = (Keyword)cArrayAssignment_1_0.eContents().get(0);
+		private final Keyword cRightSquareBracketKeyword_1_1 = (Keyword)cGroup_1.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//Attribute:
-		//	type=[Entity] array?='[]'? name=ID ';';
+		//	type=[Entity] (array?='[' ']')? name=ID ';';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//type=[Entity] array?='[]'? name=ID ';'
+		//type=[Entity] (array?='[' ']')? name=ID ';'
 		public Group getGroup() { return cGroup; }
 		
 		//type=[Entity]
@@ -121,11 +123,17 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getTypeEntityIDTerminalRuleCall_0_0_1() { return cTypeEntityIDTerminalRuleCall_0_0_1; }
 		
-		//array?='[]'?
-		public Assignment getArrayAssignment_1() { return cArrayAssignment_1; }
+		//(array?='[' ']')?
+		public Group getGroup_1() { return cGroup_1; }
 		
-		//'[]'
-		public Keyword getArrayLeftSquareBracketRightSquareBracketKeyword_1_0() { return cArrayLeftSquareBracketRightSquareBracketKeyword_1_0; }
+		//array?='['
+		public Assignment getArrayAssignment_1_0() { return cArrayAssignment_1_0; }
+		
+		//'['
+		public Keyword getArrayLeftSquareBracketKeyword_1_0_0() { return cArrayLeftSquareBracketKeyword_1_0_0; }
+		
+		//']'
+		public Keyword getRightSquareBracketKeyword_1_1() { return cRightSquareBracketKeyword_1_1; }
 		
 		//name=ID
 		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
@@ -205,7 +213,7 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Attribute:
-	//	type=[Entity] array?='[]'? name=ID ';';
+	//	type=[Entity] (array?='[' ']')? name=ID ';';
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
 	}

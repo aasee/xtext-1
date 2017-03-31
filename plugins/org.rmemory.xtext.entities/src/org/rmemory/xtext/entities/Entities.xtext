@@ -10,5 +10,5 @@ Entity:
 ;
 
 Attribute:
-	type=[Entity] array?=('[]')? name=ID ';'
+	type=[Entity] (array?='[' ']')? name=ID ';'
 ;

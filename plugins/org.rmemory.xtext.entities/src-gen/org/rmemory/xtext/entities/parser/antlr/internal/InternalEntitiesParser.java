@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalEntitiesParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'extends'", "'{'", "'[]'", "';'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'entity'", "'extends'", "'{'", "'['", "']'", "';'"
     };
     public static final int RULE_ID=4;
     public static final int RULE_WS=9;
@@ -29,6 +29,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
     public static final int RULE_ANY_OTHER=10;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__15=15;
+    public static final int T__16=16;
     public static final int RULE_INT=5;
     public static final int T__11=11;
     public static final int RULE_ML_COMMENT=7;
@@ -438,24 +439,25 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttribute"
-    // InternalEntities.g:190:1: ruleAttribute returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( (lv_array_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ';' ) ;
+    // InternalEntities.g:190:1: ruleAttribute returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';' ) ;
     public final EObject ruleAttribute() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
         Token lv_array_1_0=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
+        Token otherlv_2=null;
+        Token lv_name_3_0=null;
+        Token otherlv_4=null;
 
 
         	enterRule();
 
         try {
-            // InternalEntities.g:196:2: ( ( ( (otherlv_0= RULE_ID ) ) ( (lv_array_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ';' ) )
-            // InternalEntities.g:197:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_array_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ';' )
+            // InternalEntities.g:196:2: ( ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';' ) )
+            // InternalEntities.g:197:2: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';' )
             {
-            // InternalEntities.g:197:2: ( ( (otherlv_0= RULE_ID ) ) ( (lv_array_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ';' )
-            // InternalEntities.g:198:3: ( (otherlv_0= RULE_ID ) ) ( (lv_array_1_0= '[]' ) )? ( (lv_name_2_0= RULE_ID ) ) otherlv_3= ';'
+            // InternalEntities.g:197:2: ( ( (otherlv_0= RULE_ID ) ) ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';' )
+            // InternalEntities.g:198:3: ( (otherlv_0= RULE_ID ) ) ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )? ( (lv_name_3_0= RULE_ID ) ) otherlv_4= ';'
             {
             // InternalEntities.g:198:3: ( (otherlv_0= RULE_ID ) )
             // InternalEntities.g:199:4: (otherlv_0= RULE_ID )
@@ -478,7 +480,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalEntities.g:211:3: ( (lv_array_1_0= '[]' ) )?
+            // InternalEntities.g:211:3: ( ( (lv_array_1_0= '[' ) ) otherlv_2= ']' )?
             int alt4=2;
             int LA4_0 = input.LA(1);
 
@@ -487,39 +489,49 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
             }
             switch (alt4) {
                 case 1 :
-                    // InternalEntities.g:212:4: (lv_array_1_0= '[]' )
+                    // InternalEntities.g:212:4: ( (lv_array_1_0= '[' ) ) otherlv_2= ']'
                     {
-                    // InternalEntities.g:212:4: (lv_array_1_0= '[]' )
-                    // InternalEntities.g:213:5: lv_array_1_0= '[]'
+                    // InternalEntities.g:212:4: ( (lv_array_1_0= '[' ) )
+                    // InternalEntities.g:213:5: (lv_array_1_0= '[' )
                     {
-                    lv_array_1_0=(Token)match(input,14,FOLLOW_4); 
+                    // InternalEntities.g:213:5: (lv_array_1_0= '[' )
+                    // InternalEntities.g:214:6: lv_array_1_0= '['
+                    {
+                    lv_array_1_0=(Token)match(input,14,FOLLOW_9); 
 
-                    					newLeafNode(lv_array_1_0, grammarAccess.getAttributeAccess().getArrayLeftSquareBracketRightSquareBracketKeyword_1_0());
-                    				
+                    						newLeafNode(lv_array_1_0, grammarAccess.getAttributeAccess().getArrayLeftSquareBracketKeyword_1_0_0());
+                    					
 
-                    					if (current==null) {
-                    						current = createModelElement(grammarAccess.getAttributeRule());
-                    					}
-                    					setWithLastConsumed(current, "array", true, "[]");
-                    				
+                    						if (current==null) {
+                    							current = createModelElement(grammarAccess.getAttributeRule());
+                    						}
+                    						setWithLastConsumed(current, "array", true, "[");
+                    					
 
                     }
 
+
+                    }
+
+                    otherlv_2=(Token)match(input,15,FOLLOW_4); 
+
+                    				newLeafNode(otherlv_2, grammarAccess.getAttributeAccess().getRightSquareBracketKeyword_1_1());
+                    			
 
                     }
                     break;
 
             }
 
-            // InternalEntities.g:225:3: ( (lv_name_2_0= RULE_ID ) )
-            // InternalEntities.g:226:4: (lv_name_2_0= RULE_ID )
+            // InternalEntities.g:231:3: ( (lv_name_3_0= RULE_ID ) )
+            // InternalEntities.g:232:4: (lv_name_3_0= RULE_ID )
             {
-            // InternalEntities.g:226:4: (lv_name_2_0= RULE_ID )
-            // InternalEntities.g:227:5: lv_name_2_0= RULE_ID
+            // InternalEntities.g:232:4: (lv_name_3_0= RULE_ID )
+            // InternalEntities.g:233:5: lv_name_3_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_9); 
+            lv_name_3_0=(Token)match(input,RULE_ID,FOLLOW_10); 
 
-            					newLeafNode(lv_name_2_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0());
+            					newLeafNode(lv_name_3_0, grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_2_0());
             				
 
             					if (current==null) {
@@ -528,7 +540,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"name",
-            						lv_name_2_0,
+            						lv_name_3_0,
             						"org.eclipse.xtext.common.Terminals.ID");
             				
 
@@ -537,9 +549,9 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_3=(Token)match(input,15,FOLLOW_2); 
+            otherlv_4=(Token)match(input,16,FOLLOW_2); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getAttributeAccess().getSemicolonKeyword_3());
+            			newLeafNode(otherlv_4, grammarAccess.getAttributeAccess().getSemicolonKeyword_3());
             		
 
             }
@@ -576,5 +588,6 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000000012L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000004010L});
     public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000010000L});
 
 }
