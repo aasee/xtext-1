@@ -22,7 +22,6 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Entities.ecore#//AttributeType/elementType"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Entities.ecore#//AttributeType/array"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Entities.ecore#//AttributeType/length"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Entities.ecore#//AttributeType/name"/>
     </genClasses>
     <genClasses ecoreClass="Entities.ecore#//ElementType"/>
     <genClasses ecoreClass="Entities.ecore#//BasicType">

@@ -6,7 +6,8 @@ Model: entities += Entity*;
 
 Entity:
 	'entity' name = ID ('extends' superType=[Entity])? '{'
-	 attributes += Attribute* '}'	
+	 attributes += Attribute* 
+	 '}'	
 ;
 
 Attribute:
@@ -14,7 +15,7 @@ Attribute:
 ;
 
 AttributeType:
-	elementType=ElementType (array?='[' (length=INT)? ']')? name=ID ';'
+	elementType=ElementType (array?='[' (length=INT)? ']')?
 ;
 
 ElementType:

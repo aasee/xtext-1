@@ -206,22 +206,13 @@ public interface EntitiesPackage extends EPackage
   int ATTRIBUTE_TYPE__LENGTH = 2;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ATTRIBUTE_TYPE__NAME = 3;
-
-  /**
    * The number of structural features of the '<em>Attribute Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE_TYPE_FEATURE_COUNT = 4;
+  int ATTRIBUTE_TYPE_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link org.rmemory.xtext.entities.entities.impl.ElementTypeImpl <em>Element Type</em>}' class.
@@ -439,17 +430,6 @@ public interface EntitiesPackage extends EPackage
   EAttribute getAttributeType_Length();
 
   /**
-   * Returns the meta object for the attribute '{@link org.rmemory.xtext.entities.entities.AttributeType#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.rmemory.xtext.entities.entities.AttributeType#getName()
-   * @see #getAttributeType()
-   * @generated
-   */
-  EAttribute getAttributeType_Name();
-
-  /**
    * Returns the meta object for class '{@link org.rmemory.xtext.entities.entities.ElementType <em>Element Type</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -635,14 +615,6 @@ public interface EntitiesPackage extends EPackage
      * @generated
      */
     EAttribute ATTRIBUTE_TYPE__LENGTH = eINSTANCE.getAttributeType_Length();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ATTRIBUTE_TYPE__NAME = eINSTANCE.getAttributeType_Name();
 
     /**
      * The meta object literal for the '{@link org.rmemory.xtext.entities.entities.impl.ElementTypeImpl <em>Element Type</em>}' class.

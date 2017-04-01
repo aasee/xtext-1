@@ -56,7 +56,8 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Entity:
 		//	'entity' name=ID ('extends' superType=[Entity])? '{'
-		//	attributes+=Attribute* '}';
+		//	attributes+=Attribute*
+		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
 		//'entity' name=ID ('extends' superType=[Entity])? '{' attributes+=Attribute* '}'
@@ -140,15 +141,12 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cLengthAssignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
 		private final RuleCall cLengthINTTerminalRuleCall_1_1_0 = (RuleCall)cLengthAssignment_1_1.eContents().get(0);
 		private final Keyword cRightSquareBracketKeyword_1_2 = (Keyword)cGroup_1.eContents().get(2);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//AttributeType:
-		//	elementType=ElementType (array?='[' length=INT? ']')? name=ID ';';
+		//	elementType=ElementType (array?='[' length=INT? ']')?;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//elementType=ElementType (array?='[' length=INT? ']')? name=ID ';'
+		//elementType=ElementType (array?='[' length=INT? ']')?
 		public Group getGroup() { return cGroup; }
 		
 		//elementType=ElementType
@@ -174,15 +172,6 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//']'
 		public Keyword getRightSquareBracketKeyword_1_2() { return cRightSquareBracketKeyword_1_2; }
-		
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-		
-		//';'
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 	public class ElementTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.rmemory.xtext.entities.Entities.ElementType");
@@ -316,7 +305,8 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Entity:
 	//	'entity' name=ID ('extends' superType=[Entity])? '{'
-	//	attributes+=Attribute* '}';
+	//	attributes+=Attribute*
+	//	'}';
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -336,7 +326,7 @@ public class EntitiesGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//AttributeType:
-	//	elementType=ElementType (array?='[' length=INT? ']')? name=ID ';';
+	//	elementType=ElementType (array?='[' length=INT? ']')?;
 	public AttributeTypeElements getAttributeTypeAccess() {
 		return pAttributeType;
 	}

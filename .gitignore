@@ -1,0 +1,6 @@
+*.class
+.metadata
+xtend-gen
+src-gen
+bin
+.DS_Store

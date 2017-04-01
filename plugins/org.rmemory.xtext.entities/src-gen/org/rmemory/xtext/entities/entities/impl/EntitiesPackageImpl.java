@@ -275,16 +275,6 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAttributeType_Name()
-  {
-    return (EAttribute)attributeTypeEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getElementType()
   {
     return elementTypeEClass;
@@ -376,7 +366,6 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
     createEReference(attributeTypeEClass, ATTRIBUTE_TYPE__ELEMENT_TYPE);
     createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__ARRAY);
     createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__LENGTH);
-    createEAttribute(attributeTypeEClass, ATTRIBUTE_TYPE__NAME);
 
     elementTypeEClass = createEClass(ELEMENT_TYPE);
 
@@ -436,7 +425,6 @@ public class EntitiesPackageImpl extends EPackageImpl implements EntitiesPackage
     initEReference(getAttributeType_ElementType(), this.getElementType(), null, "elementType", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributeType_Array(), ecorePackage.getEBoolean(), "array", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAttributeType_Length(), ecorePackage.getEInt(), "length", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAttributeType_Name(), ecorePackage.getEString(), "name", null, 0, 1, AttributeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(elementTypeEClass, ElementType.class, "ElementType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.rmemory.xtext.entities
-Bundle-Vendor: My Company
+Bundle-Vendor: Richard Memory
 Bundle-Version: 1.0.0.qualifier
 Bundle-SymbolicName: org.rmemory.xtext.entities; singleton:=true
 Bundle-ActivationPolicy: lazy

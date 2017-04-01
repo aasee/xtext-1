@@ -65,7 +65,7 @@ public class EntitiesSemanticSequencer extends AbstractDelegatingSemanticSequenc
 	 *     AttributeType returns AttributeType
 	 *
 	 * Constraint:
-	 *     (elementType=ElementType (array?='[' length=INT?)? name=ID)
+	 *     (elementType=ElementType (array?='[' length=INT?)?)
 	 */
 	protected void sequence_AttributeType(ISerializationContext context, AttributeType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

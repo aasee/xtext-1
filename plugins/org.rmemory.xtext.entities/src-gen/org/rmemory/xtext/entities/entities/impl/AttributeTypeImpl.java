@@ -27,7 +27,6 @@ import org.rmemory.xtext.entities.entities.EntitiesPackage;
  *   <li>{@link org.rmemory.xtext.entities.entities.impl.AttributeTypeImpl#getElementType <em>Element Type</em>}</li>
  *   <li>{@link org.rmemory.xtext.entities.entities.impl.AttributeTypeImpl#isArray <em>Array</em>}</li>
  *   <li>{@link org.rmemory.xtext.entities.entities.impl.AttributeTypeImpl#getLength <em>Length</em>}</li>
- *   <li>{@link org.rmemory.xtext.entities.entities.impl.AttributeTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,26 +82,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * @ordered
    */
   protected int length = LENGTH_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -224,29 +203,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, EntitiesPackage.ATTRIBUTE_TYPE__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -274,8 +230,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
         return isArray();
       case EntitiesPackage.ATTRIBUTE_TYPE__LENGTH:
         return getLength();
-      case EntitiesPackage.ATTRIBUTE_TYPE__NAME:
-        return getName();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -298,9 +252,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
         return;
       case EntitiesPackage.ATTRIBUTE_TYPE__LENGTH:
         setLength((Integer)newValue);
-        return;
-      case EntitiesPackage.ATTRIBUTE_TYPE__NAME:
-        setName((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -325,9 +276,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
       case EntitiesPackage.ATTRIBUTE_TYPE__LENGTH:
         setLength(LENGTH_EDEFAULT);
         return;
-      case EntitiesPackage.ATTRIBUTE_TYPE__NAME:
-        setName(NAME_EDEFAULT);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -348,8 +296,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
         return array != ARRAY_EDEFAULT;
       case EntitiesPackage.ATTRIBUTE_TYPE__LENGTH:
         return length != LENGTH_EDEFAULT;
-      case EntitiesPackage.ATTRIBUTE_TYPE__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
     return super.eIsSet(featureID);
   }
@@ -369,8 +315,6 @@ public class AttributeTypeImpl extends MinimalEObjectImpl.Container implements A
     result.append(array);
     result.append(", length: ");
     result.append(length);
-    result.append(", name: ");
-    result.append(name);
     result.append(')');
     return result.toString();
   }

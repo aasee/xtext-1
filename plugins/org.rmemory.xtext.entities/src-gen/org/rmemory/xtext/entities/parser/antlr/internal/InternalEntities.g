@@ -316,28 +316,6 @@ ruleAttributeType returns [EObject current=null]
 				newLeafNode(otherlv_3, grammarAccess.getAttributeTypeAccess().getRightSquareBracketKeyword_1_2());
 			}
 		)?
-		(
-			(
-				lv_name_4_0=RULE_ID
-				{
-					newLeafNode(lv_name_4_0, grammarAccess.getAttributeTypeAccess().getNameIDTerminalRuleCall_2_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getAttributeTypeRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_4_0,
-						"org.eclipse.xtext.common.Terminals.ID");
-				}
-			)
-		)
-		otherlv_5=';'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getAttributeTypeAccess().getSemicolonKeyword_3());
-		}
 	)
 ;
 

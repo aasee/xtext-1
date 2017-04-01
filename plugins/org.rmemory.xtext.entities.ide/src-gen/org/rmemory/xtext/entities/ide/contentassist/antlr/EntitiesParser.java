@@ -51,7 +51,6 @@ public class EntitiesParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAttributeTypeAccess().getElementTypeAssignment_0(), "rule__AttributeType__ElementTypeAssignment_0");
 					put(grammarAccess.getAttributeTypeAccess().getArrayAssignment_1_0(), "rule__AttributeType__ArrayAssignment_1_0");
 					put(grammarAccess.getAttributeTypeAccess().getLengthAssignment_1_1(), "rule__AttributeType__LengthAssignment_1_1");
-					put(grammarAccess.getAttributeTypeAccess().getNameAssignment_2(), "rule__AttributeType__NameAssignment_2");
 					put(grammarAccess.getBasicTypeAccess().getTypeNameAssignment(), "rule__BasicType__TypeNameAssignment");
 					put(grammarAccess.getEntityTypeAccess().getEntityAssignment(), "rule__EntityType__EntityAssignment");
 				}

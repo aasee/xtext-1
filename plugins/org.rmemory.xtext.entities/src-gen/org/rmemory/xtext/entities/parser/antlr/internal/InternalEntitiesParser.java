@@ -587,15 +587,13 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleAttributeType"
-    // InternalEntities.g:254:1: ruleAttributeType returns [EObject current=null] : ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ( (lv_name_4_0= RULE_ID ) ) otherlv_5= ';' ) ;
+    // InternalEntities.g:254:1: ruleAttributeType returns [EObject current=null] : ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ) ;
     public final EObject ruleAttributeType() throws RecognitionException {
         EObject current = null;
 
         Token lv_array_1_0=null;
         Token lv_length_2_0=null;
         Token otherlv_3=null;
-        Token lv_name_4_0=null;
-        Token otherlv_5=null;
         EObject lv_elementType_0_0 = null;
 
 
@@ -603,11 +601,11 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntities.g:260:2: ( ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ( (lv_name_4_0= RULE_ID ) ) otherlv_5= ';' ) )
-            // InternalEntities.g:261:2: ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ( (lv_name_4_0= RULE_ID ) ) otherlv_5= ';' )
+            // InternalEntities.g:260:2: ( ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ) )
+            // InternalEntities.g:261:2: ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? )
             {
-            // InternalEntities.g:261:2: ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ( (lv_name_4_0= RULE_ID ) ) otherlv_5= ';' )
-            // InternalEntities.g:262:3: ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? ( (lv_name_4_0= RULE_ID ) ) otherlv_5= ';'
+            // InternalEntities.g:261:2: ( ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )? )
+            // InternalEntities.g:262:3: ( (lv_elementType_0_0= ruleElementType ) ) ( ( (lv_array_1_0= '[' ) ) ( (lv_length_2_0= RULE_INT ) )? otherlv_3= ']' )?
             {
             // InternalEntities.g:262:3: ( (lv_elementType_0_0= ruleElementType ) )
             // InternalEntities.g:263:4: (lv_elementType_0_0= ruleElementType )
@@ -710,7 +708,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    otherlv_3=(Token)match(input,17,FOLLOW_4); 
+                    otherlv_3=(Token)match(input,17,FOLLOW_2); 
 
                     				newLeafNode(otherlv_3, grammarAccess.getAttributeTypeAccess().getRightSquareBracketKeyword_1_2());
                     			
@@ -720,36 +718,6 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalEntities.g:319:3: ( (lv_name_4_0= RULE_ID ) )
-            // InternalEntities.g:320:4: (lv_name_4_0= RULE_ID )
-            {
-            // InternalEntities.g:320:4: (lv_name_4_0= RULE_ID )
-            // InternalEntities.g:321:5: lv_name_4_0= RULE_ID
-            {
-            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_8); 
-
-            					newLeafNode(lv_name_4_0, grammarAccess.getAttributeTypeAccess().getNameIDTerminalRuleCall_2_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getAttributeTypeRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"name",
-            						lv_name_4_0,
-            						"org.eclipse.xtext.common.Terminals.ID");
-            				
-
-            }
-
-
-            }
-
-            otherlv_5=(Token)match(input,15,FOLLOW_2); 
-
-            			newLeafNode(otherlv_5, grammarAccess.getAttributeTypeAccess().getSemicolonKeyword_3());
-            		
 
             }
 
@@ -773,7 +741,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleElementType"
-    // InternalEntities.g:345:1: entryRuleElementType returns [EObject current=null] : iv_ruleElementType= ruleElementType EOF ;
+    // InternalEntities.g:323:1: entryRuleElementType returns [EObject current=null] : iv_ruleElementType= ruleElementType EOF ;
     public final EObject entryRuleElementType() throws RecognitionException {
         EObject current = null;
 
@@ -781,8 +749,8 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEntities.g:345:52: (iv_ruleElementType= ruleElementType EOF )
-            // InternalEntities.g:346:2: iv_ruleElementType= ruleElementType EOF
+            // InternalEntities.g:323:52: (iv_ruleElementType= ruleElementType EOF )
+            // InternalEntities.g:324:2: iv_ruleElementType= ruleElementType EOF
             {
              newCompositeNode(grammarAccess.getElementTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -809,7 +777,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleElementType"
-    // InternalEntities.g:352:1: ruleElementType returns [EObject current=null] : (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType ) ;
+    // InternalEntities.g:330:1: ruleElementType returns [EObject current=null] : (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType ) ;
     public final EObject ruleElementType() throws RecognitionException {
         EObject current = null;
 
@@ -822,10 +790,10 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntities.g:358:2: ( (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType ) )
-            // InternalEntities.g:359:2: (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType )
+            // InternalEntities.g:336:2: ( (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType ) )
+            // InternalEntities.g:337:2: (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType )
             {
-            // InternalEntities.g:359:2: (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType )
+            // InternalEntities.g:337:2: (this_BasicType_0= ruleBasicType | this_EntityType_1= ruleEntityType )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -843,7 +811,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalEntities.g:360:3: this_BasicType_0= ruleBasicType
+                    // InternalEntities.g:338:3: this_BasicType_0= ruleBasicType
                     {
 
                     			newCompositeNode(grammarAccess.getElementTypeAccess().getBasicTypeParserRuleCall_0());
@@ -861,7 +829,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEntities.g:369:3: this_EntityType_1= ruleEntityType
+                    // InternalEntities.g:347:3: this_EntityType_1= ruleEntityType
                     {
 
                     			newCompositeNode(grammarAccess.getElementTypeAccess().getEntityTypeParserRuleCall_1());
@@ -901,7 +869,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleBasicType"
-    // InternalEntities.g:381:1: entryRuleBasicType returns [EObject current=null] : iv_ruleBasicType= ruleBasicType EOF ;
+    // InternalEntities.g:359:1: entryRuleBasicType returns [EObject current=null] : iv_ruleBasicType= ruleBasicType EOF ;
     public final EObject entryRuleBasicType() throws RecognitionException {
         EObject current = null;
 
@@ -909,8 +877,8 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEntities.g:381:50: (iv_ruleBasicType= ruleBasicType EOF )
-            // InternalEntities.g:382:2: iv_ruleBasicType= ruleBasicType EOF
+            // InternalEntities.g:359:50: (iv_ruleBasicType= ruleBasicType EOF )
+            // InternalEntities.g:360:2: iv_ruleBasicType= ruleBasicType EOF
             {
              newCompositeNode(grammarAccess.getBasicTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -937,7 +905,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleBasicType"
-    // InternalEntities.g:388:1: ruleBasicType returns [EObject current=null] : ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) ;
+    // InternalEntities.g:366:1: ruleBasicType returns [EObject current=null] : ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) ;
     public final EObject ruleBasicType() throws RecognitionException {
         EObject current = null;
 
@@ -949,16 +917,16 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntities.g:394:2: ( ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) )
-            // InternalEntities.g:395:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
+            // InternalEntities.g:372:2: ( ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) ) )
+            // InternalEntities.g:373:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
             {
-            // InternalEntities.g:395:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
-            // InternalEntities.g:396:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
+            // InternalEntities.g:373:2: ( ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) ) )
+            // InternalEntities.g:374:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
             {
-            // InternalEntities.g:396:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
-            // InternalEntities.g:397:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
+            // InternalEntities.g:374:3: ( (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' ) )
+            // InternalEntities.g:375:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
             {
-            // InternalEntities.g:397:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
+            // InternalEntities.g:375:4: (lv_typeName_0_1= 'string' | lv_typeName_0_2= 'int' | lv_typeName_0_3= 'boolean' )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 18:
@@ -985,7 +953,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
             switch (alt7) {
                 case 1 :
-                    // InternalEntities.g:398:5: lv_typeName_0_1= 'string'
+                    // InternalEntities.g:376:5: lv_typeName_0_1= 'string'
                     {
                     lv_typeName_0_1=(Token)match(input,18,FOLLOW_2); 
 
@@ -1001,7 +969,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalEntities.g:409:5: lv_typeName_0_2= 'int'
+                    // InternalEntities.g:387:5: lv_typeName_0_2= 'int'
                     {
                     lv_typeName_0_2=(Token)match(input,19,FOLLOW_2); 
 
@@ -1017,7 +985,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalEntities.g:420:5: lv_typeName_0_3= 'boolean'
+                    // InternalEntities.g:398:5: lv_typeName_0_3= 'boolean'
                     {
                     lv_typeName_0_3=(Token)match(input,20,FOLLOW_2); 
 
@@ -1061,7 +1029,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEntityType"
-    // InternalEntities.g:436:1: entryRuleEntityType returns [EObject current=null] : iv_ruleEntityType= ruleEntityType EOF ;
+    // InternalEntities.g:414:1: entryRuleEntityType returns [EObject current=null] : iv_ruleEntityType= ruleEntityType EOF ;
     public final EObject entryRuleEntityType() throws RecognitionException {
         EObject current = null;
 
@@ -1069,8 +1037,8 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalEntities.g:436:51: (iv_ruleEntityType= ruleEntityType EOF )
-            // InternalEntities.g:437:2: iv_ruleEntityType= ruleEntityType EOF
+            // InternalEntities.g:414:51: (iv_ruleEntityType= ruleEntityType EOF )
+            // InternalEntities.g:415:2: iv_ruleEntityType= ruleEntityType EOF
             {
              newCompositeNode(grammarAccess.getEntityTypeRule()); 
             pushFollow(FOLLOW_1);
@@ -1097,7 +1065,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEntityType"
-    // InternalEntities.g:443:1: ruleEntityType returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
+    // InternalEntities.g:421:1: ruleEntityType returns [EObject current=null] : ( (otherlv_0= RULE_ID ) ) ;
     public final EObject ruleEntityType() throws RecognitionException {
         EObject current = null;
 
@@ -1107,14 +1075,14 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalEntities.g:449:2: ( ( (otherlv_0= RULE_ID ) ) )
-            // InternalEntities.g:450:2: ( (otherlv_0= RULE_ID ) )
+            // InternalEntities.g:427:2: ( ( (otherlv_0= RULE_ID ) ) )
+            // InternalEntities.g:428:2: ( (otherlv_0= RULE_ID ) )
             {
-            // InternalEntities.g:450:2: ( (otherlv_0= RULE_ID ) )
-            // InternalEntities.g:451:3: (otherlv_0= RULE_ID )
+            // InternalEntities.g:428:2: ( (otherlv_0= RULE_ID ) )
+            // InternalEntities.g:429:3: (otherlv_0= RULE_ID )
             {
-            // InternalEntities.g:451:3: (otherlv_0= RULE_ID )
-            // InternalEntities.g:452:4: otherlv_0= RULE_ID
+            // InternalEntities.g:429:3: (otherlv_0= RULE_ID )
+            // InternalEntities.g:430:4: otherlv_0= RULE_ID
             {
 
             				if (current==null) {
@@ -1162,7 +1130,7 @@ public class InternalEntitiesParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x00000000001C4010L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010010L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000010002L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020020L});
     public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000020000L});
 

@@ -1794,22 +1794,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group__1"
-    // InternalEntities.g:599:1: rule__AttributeType__Group__1 : rule__AttributeType__Group__1__Impl rule__AttributeType__Group__2 ;
+    // InternalEntities.g:599:1: rule__AttributeType__Group__1 : rule__AttributeType__Group__1__Impl ;
     public final void rule__AttributeType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:603:1: ( rule__AttributeType__Group__1__Impl rule__AttributeType__Group__2 )
-            // InternalEntities.g:604:2: rule__AttributeType__Group__1__Impl rule__AttributeType__Group__2
+            // InternalEntities.g:603:1: ( rule__AttributeType__Group__1__Impl )
+            // InternalEntities.g:604:2: rule__AttributeType__Group__1__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__AttributeType__Group__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__AttributeType__Group__2();
+            rule__AttributeType__Group__1__Impl();
 
             state._fsp--;
 
@@ -1832,20 +1827,20 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group__1__Impl"
-    // InternalEntities.g:611:1: rule__AttributeType__Group__1__Impl : ( ( rule__AttributeType__Group_1__0 )? ) ;
+    // InternalEntities.g:610:1: rule__AttributeType__Group__1__Impl : ( ( rule__AttributeType__Group_1__0 )? ) ;
     public final void rule__AttributeType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:615:1: ( ( ( rule__AttributeType__Group_1__0 )? ) )
-            // InternalEntities.g:616:1: ( ( rule__AttributeType__Group_1__0 )? )
+            // InternalEntities.g:614:1: ( ( ( rule__AttributeType__Group_1__0 )? ) )
+            // InternalEntities.g:615:1: ( ( rule__AttributeType__Group_1__0 )? )
             {
-            // InternalEntities.g:616:1: ( ( rule__AttributeType__Group_1__0 )? )
-            // InternalEntities.g:617:2: ( rule__AttributeType__Group_1__0 )?
+            // InternalEntities.g:615:1: ( ( rule__AttributeType__Group_1__0 )? )
+            // InternalEntities.g:616:2: ( rule__AttributeType__Group_1__0 )?
             {
              before(grammarAccess.getAttributeTypeAccess().getGroup_1()); 
-            // InternalEntities.g:618:2: ( rule__AttributeType__Group_1__0 )?
+            // InternalEntities.g:617:2: ( rule__AttributeType__Group_1__0 )?
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1854,7 +1849,7 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
             }
             switch (alt6) {
                 case 1 :
-                    // InternalEntities.g:618:3: rule__AttributeType__Group_1__0
+                    // InternalEntities.g:617:3: rule__AttributeType__Group_1__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__AttributeType__Group_1__0();
@@ -1889,170 +1884,15 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__AttributeType__Group__1__Impl"
 
 
-    // $ANTLR start "rule__AttributeType__Group__2"
-    // InternalEntities.g:626:1: rule__AttributeType__Group__2 : rule__AttributeType__Group__2__Impl rule__AttributeType__Group__3 ;
-    public final void rule__AttributeType__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:630:1: ( rule__AttributeType__Group__2__Impl rule__AttributeType__Group__3 )
-            // InternalEntities.g:631:2: rule__AttributeType__Group__2__Impl rule__AttributeType__Group__3
-            {
-            pushFollow(FOLLOW_8);
-            rule__AttributeType__Group__2__Impl();
-
-            state._fsp--;
-
-            pushFollow(FOLLOW_2);
-            rule__AttributeType__Group__3();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AttributeType__Group__2"
-
-
-    // $ANTLR start "rule__AttributeType__Group__2__Impl"
-    // InternalEntities.g:638:1: rule__AttributeType__Group__2__Impl : ( ( rule__AttributeType__NameAssignment_2 ) ) ;
-    public final void rule__AttributeType__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:642:1: ( ( ( rule__AttributeType__NameAssignment_2 ) ) )
-            // InternalEntities.g:643:1: ( ( rule__AttributeType__NameAssignment_2 ) )
-            {
-            // InternalEntities.g:643:1: ( ( rule__AttributeType__NameAssignment_2 ) )
-            // InternalEntities.g:644:2: ( rule__AttributeType__NameAssignment_2 )
-            {
-             before(grammarAccess.getAttributeTypeAccess().getNameAssignment_2()); 
-            // InternalEntities.g:645:2: ( rule__AttributeType__NameAssignment_2 )
-            // InternalEntities.g:645:3: rule__AttributeType__NameAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__AttributeType__NameAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getAttributeTypeAccess().getNameAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AttributeType__Group__2__Impl"
-
-
-    // $ANTLR start "rule__AttributeType__Group__3"
-    // InternalEntities.g:653:1: rule__AttributeType__Group__3 : rule__AttributeType__Group__3__Impl ;
-    public final void rule__AttributeType__Group__3() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:657:1: ( rule__AttributeType__Group__3__Impl )
-            // InternalEntities.g:658:2: rule__AttributeType__Group__3__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__AttributeType__Group__3__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AttributeType__Group__3"
-
-
-    // $ANTLR start "rule__AttributeType__Group__3__Impl"
-    // InternalEntities.g:664:1: rule__AttributeType__Group__3__Impl : ( ';' ) ;
-    public final void rule__AttributeType__Group__3__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:668:1: ( ( ';' ) )
-            // InternalEntities.g:669:1: ( ';' )
-            {
-            // InternalEntities.g:669:1: ( ';' )
-            // InternalEntities.g:670:2: ';'
-            {
-             before(grammarAccess.getAttributeTypeAccess().getSemicolonKeyword_3()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getSemicolonKeyword_3()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AttributeType__Group__3__Impl"
-
-
     // $ANTLR start "rule__AttributeType__Group_1__0"
-    // InternalEntities.g:680:1: rule__AttributeType__Group_1__0 : rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1 ;
+    // InternalEntities.g:626:1: rule__AttributeType__Group_1__0 : rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1 ;
     public final void rule__AttributeType__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:684:1: ( rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1 )
-            // InternalEntities.g:685:2: rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1
+            // InternalEntities.g:630:1: ( rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1 )
+            // InternalEntities.g:631:2: rule__AttributeType__Group_1__0__Impl rule__AttributeType__Group_1__1
             {
             pushFollow(FOLLOW_10);
             rule__AttributeType__Group_1__0__Impl();
@@ -2083,21 +1923,21 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group_1__0__Impl"
-    // InternalEntities.g:692:1: rule__AttributeType__Group_1__0__Impl : ( ( rule__AttributeType__ArrayAssignment_1_0 ) ) ;
+    // InternalEntities.g:638:1: rule__AttributeType__Group_1__0__Impl : ( ( rule__AttributeType__ArrayAssignment_1_0 ) ) ;
     public final void rule__AttributeType__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:696:1: ( ( ( rule__AttributeType__ArrayAssignment_1_0 ) ) )
-            // InternalEntities.g:697:1: ( ( rule__AttributeType__ArrayAssignment_1_0 ) )
+            // InternalEntities.g:642:1: ( ( ( rule__AttributeType__ArrayAssignment_1_0 ) ) )
+            // InternalEntities.g:643:1: ( ( rule__AttributeType__ArrayAssignment_1_0 ) )
             {
-            // InternalEntities.g:697:1: ( ( rule__AttributeType__ArrayAssignment_1_0 ) )
-            // InternalEntities.g:698:2: ( rule__AttributeType__ArrayAssignment_1_0 )
+            // InternalEntities.g:643:1: ( ( rule__AttributeType__ArrayAssignment_1_0 ) )
+            // InternalEntities.g:644:2: ( rule__AttributeType__ArrayAssignment_1_0 )
             {
              before(grammarAccess.getAttributeTypeAccess().getArrayAssignment_1_0()); 
-            // InternalEntities.g:699:2: ( rule__AttributeType__ArrayAssignment_1_0 )
-            // InternalEntities.g:699:3: rule__AttributeType__ArrayAssignment_1_0
+            // InternalEntities.g:645:2: ( rule__AttributeType__ArrayAssignment_1_0 )
+            // InternalEntities.g:645:3: rule__AttributeType__ArrayAssignment_1_0
             {
             pushFollow(FOLLOW_2);
             rule__AttributeType__ArrayAssignment_1_0();
@@ -2130,14 +1970,14 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group_1__1"
-    // InternalEntities.g:707:1: rule__AttributeType__Group_1__1 : rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2 ;
+    // InternalEntities.g:653:1: rule__AttributeType__Group_1__1 : rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2 ;
     public final void rule__AttributeType__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:711:1: ( rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2 )
-            // InternalEntities.g:712:2: rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2
+            // InternalEntities.g:657:1: ( rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2 )
+            // InternalEntities.g:658:2: rule__AttributeType__Group_1__1__Impl rule__AttributeType__Group_1__2
             {
             pushFollow(FOLLOW_10);
             rule__AttributeType__Group_1__1__Impl();
@@ -2168,20 +2008,20 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group_1__1__Impl"
-    // InternalEntities.g:719:1: rule__AttributeType__Group_1__1__Impl : ( ( rule__AttributeType__LengthAssignment_1_1 )? ) ;
+    // InternalEntities.g:665:1: rule__AttributeType__Group_1__1__Impl : ( ( rule__AttributeType__LengthAssignment_1_1 )? ) ;
     public final void rule__AttributeType__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:723:1: ( ( ( rule__AttributeType__LengthAssignment_1_1 )? ) )
-            // InternalEntities.g:724:1: ( ( rule__AttributeType__LengthAssignment_1_1 )? )
+            // InternalEntities.g:669:1: ( ( ( rule__AttributeType__LengthAssignment_1_1 )? ) )
+            // InternalEntities.g:670:1: ( ( rule__AttributeType__LengthAssignment_1_1 )? )
             {
-            // InternalEntities.g:724:1: ( ( rule__AttributeType__LengthAssignment_1_1 )? )
-            // InternalEntities.g:725:2: ( rule__AttributeType__LengthAssignment_1_1 )?
+            // InternalEntities.g:670:1: ( ( rule__AttributeType__LengthAssignment_1_1 )? )
+            // InternalEntities.g:671:2: ( rule__AttributeType__LengthAssignment_1_1 )?
             {
              before(grammarAccess.getAttributeTypeAccess().getLengthAssignment_1_1()); 
-            // InternalEntities.g:726:2: ( rule__AttributeType__LengthAssignment_1_1 )?
+            // InternalEntities.g:672:2: ( rule__AttributeType__LengthAssignment_1_1 )?
             int alt7=2;
             int LA7_0 = input.LA(1);
 
@@ -2190,7 +2030,7 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
             }
             switch (alt7) {
                 case 1 :
-                    // InternalEntities.g:726:3: rule__AttributeType__LengthAssignment_1_1
+                    // InternalEntities.g:672:3: rule__AttributeType__LengthAssignment_1_1
                     {
                     pushFollow(FOLLOW_2);
                     rule__AttributeType__LengthAssignment_1_1();
@@ -2226,14 +2066,14 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group_1__2"
-    // InternalEntities.g:734:1: rule__AttributeType__Group_1__2 : rule__AttributeType__Group_1__2__Impl ;
+    // InternalEntities.g:680:1: rule__AttributeType__Group_1__2 : rule__AttributeType__Group_1__2__Impl ;
     public final void rule__AttributeType__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:738:1: ( rule__AttributeType__Group_1__2__Impl )
-            // InternalEntities.g:739:2: rule__AttributeType__Group_1__2__Impl
+            // InternalEntities.g:684:1: ( rule__AttributeType__Group_1__2__Impl )
+            // InternalEntities.g:685:2: rule__AttributeType__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeType__Group_1__2__Impl();
@@ -2259,17 +2099,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__Group_1__2__Impl"
-    // InternalEntities.g:745:1: rule__AttributeType__Group_1__2__Impl : ( ']' ) ;
+    // InternalEntities.g:691:1: rule__AttributeType__Group_1__2__Impl : ( ']' ) ;
     public final void rule__AttributeType__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:749:1: ( ( ']' ) )
-            // InternalEntities.g:750:1: ( ']' )
+            // InternalEntities.g:695:1: ( ( ']' ) )
+            // InternalEntities.g:696:1: ( ']' )
             {
-            // InternalEntities.g:750:1: ( ']' )
-            // InternalEntities.g:751:2: ']'
+            // InternalEntities.g:696:1: ( ']' )
+            // InternalEntities.g:697:2: ']'
             {
              before(grammarAccess.getAttributeTypeAccess().getRightSquareBracketKeyword_1_2()); 
             match(input,19,FOLLOW_2); 
@@ -2296,17 +2136,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Model__EntitiesAssignment"
-    // InternalEntities.g:761:1: rule__Model__EntitiesAssignment : ( ruleEntity ) ;
+    // InternalEntities.g:707:1: rule__Model__EntitiesAssignment : ( ruleEntity ) ;
     public final void rule__Model__EntitiesAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:765:1: ( ( ruleEntity ) )
-            // InternalEntities.g:766:2: ( ruleEntity )
+            // InternalEntities.g:711:1: ( ( ruleEntity ) )
+            // InternalEntities.g:712:2: ( ruleEntity )
             {
-            // InternalEntities.g:766:2: ( ruleEntity )
-            // InternalEntities.g:767:3: ruleEntity
+            // InternalEntities.g:712:2: ( ruleEntity )
+            // InternalEntities.g:713:3: ruleEntity
             {
              before(grammarAccess.getModelAccess().getEntitiesEntityParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -2337,17 +2177,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // InternalEntities.g:776:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalEntities.g:722:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:780:1: ( ( RULE_ID ) )
-            // InternalEntities.g:781:2: ( RULE_ID )
+            // InternalEntities.g:726:1: ( ( RULE_ID ) )
+            // InternalEntities.g:727:2: ( RULE_ID )
             {
-            // InternalEntities.g:781:2: ( RULE_ID )
-            // InternalEntities.g:782:3: RULE_ID
+            // InternalEntities.g:727:2: ( RULE_ID )
+            // InternalEntities.g:728:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2374,21 +2214,21 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__SuperTypeAssignment_2_1"
-    // InternalEntities.g:791:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( RULE_ID ) ) ;
+    // InternalEntities.g:737:1: rule__Entity__SuperTypeAssignment_2_1 : ( ( RULE_ID ) ) ;
     public final void rule__Entity__SuperTypeAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:795:1: ( ( ( RULE_ID ) ) )
-            // InternalEntities.g:796:2: ( ( RULE_ID ) )
+            // InternalEntities.g:741:1: ( ( ( RULE_ID ) ) )
+            // InternalEntities.g:742:2: ( ( RULE_ID ) )
             {
-            // InternalEntities.g:796:2: ( ( RULE_ID ) )
-            // InternalEntities.g:797:3: ( RULE_ID )
+            // InternalEntities.g:742:2: ( ( RULE_ID ) )
+            // InternalEntities.g:743:3: ( RULE_ID )
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityCrossReference_2_1_0()); 
-            // InternalEntities.g:798:3: ( RULE_ID )
-            // InternalEntities.g:799:4: RULE_ID
+            // InternalEntities.g:744:3: ( RULE_ID )
+            // InternalEntities.g:745:4: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getSuperTypeEntityIDTerminalRuleCall_2_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2419,17 +2259,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Entity__AttributesAssignment_4"
-    // InternalEntities.g:810:1: rule__Entity__AttributesAssignment_4 : ( ruleAttribute ) ;
+    // InternalEntities.g:756:1: rule__Entity__AttributesAssignment_4 : ( ruleAttribute ) ;
     public final void rule__Entity__AttributesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:814:1: ( ( ruleAttribute ) )
-            // InternalEntities.g:815:2: ( ruleAttribute )
+            // InternalEntities.g:760:1: ( ( ruleAttribute ) )
+            // InternalEntities.g:761:2: ( ruleAttribute )
             {
-            // InternalEntities.g:815:2: ( ruleAttribute )
-            // InternalEntities.g:816:3: ruleAttribute
+            // InternalEntities.g:761:2: ( ruleAttribute )
+            // InternalEntities.g:762:3: ruleAttribute
             {
              before(grammarAccess.getEntityAccess().getAttributesAttributeParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -2460,17 +2300,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Attribute__TypeAssignment_0"
-    // InternalEntities.g:825:1: rule__Attribute__TypeAssignment_0 : ( ruleAttributeType ) ;
+    // InternalEntities.g:771:1: rule__Attribute__TypeAssignment_0 : ( ruleAttributeType ) ;
     public final void rule__Attribute__TypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:829:1: ( ( ruleAttributeType ) )
-            // InternalEntities.g:830:2: ( ruleAttributeType )
+            // InternalEntities.g:775:1: ( ( ruleAttributeType ) )
+            // InternalEntities.g:776:2: ( ruleAttributeType )
             {
-            // InternalEntities.g:830:2: ( ruleAttributeType )
-            // InternalEntities.g:831:3: ruleAttributeType
+            // InternalEntities.g:776:2: ( ruleAttributeType )
+            // InternalEntities.g:777:3: ruleAttributeType
             {
              before(grammarAccess.getAttributeAccess().getTypeAttributeTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -2501,17 +2341,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__Attribute__NameAssignment_1"
-    // InternalEntities.g:840:1: rule__Attribute__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalEntities.g:786:1: rule__Attribute__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Attribute__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:844:1: ( ( RULE_ID ) )
-            // InternalEntities.g:845:2: ( RULE_ID )
+            // InternalEntities.g:790:1: ( ( RULE_ID ) )
+            // InternalEntities.g:791:2: ( RULE_ID )
             {
-            // InternalEntities.g:845:2: ( RULE_ID )
-            // InternalEntities.g:846:3: RULE_ID
+            // InternalEntities.g:791:2: ( RULE_ID )
+            // InternalEntities.g:792:3: RULE_ID
             {
              before(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2538,17 +2378,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__ElementTypeAssignment_0"
-    // InternalEntities.g:855:1: rule__AttributeType__ElementTypeAssignment_0 : ( ruleElementType ) ;
+    // InternalEntities.g:801:1: rule__AttributeType__ElementTypeAssignment_0 : ( ruleElementType ) ;
     public final void rule__AttributeType__ElementTypeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:859:1: ( ( ruleElementType ) )
-            // InternalEntities.g:860:2: ( ruleElementType )
+            // InternalEntities.g:805:1: ( ( ruleElementType ) )
+            // InternalEntities.g:806:2: ( ruleElementType )
             {
-            // InternalEntities.g:860:2: ( ruleElementType )
-            // InternalEntities.g:861:3: ruleElementType
+            // InternalEntities.g:806:2: ( ruleElementType )
+            // InternalEntities.g:807:3: ruleElementType
             {
              before(grammarAccess.getAttributeTypeAccess().getElementTypeElementTypeParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -2579,21 +2419,21 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__ArrayAssignment_1_0"
-    // InternalEntities.g:870:1: rule__AttributeType__ArrayAssignment_1_0 : ( ( '[' ) ) ;
+    // InternalEntities.g:816:1: rule__AttributeType__ArrayAssignment_1_0 : ( ( '[' ) ) ;
     public final void rule__AttributeType__ArrayAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:874:1: ( ( ( '[' ) ) )
-            // InternalEntities.g:875:2: ( ( '[' ) )
+            // InternalEntities.g:820:1: ( ( ( '[' ) ) )
+            // InternalEntities.g:821:2: ( ( '[' ) )
             {
-            // InternalEntities.g:875:2: ( ( '[' ) )
-            // InternalEntities.g:876:3: ( '[' )
+            // InternalEntities.g:821:2: ( ( '[' ) )
+            // InternalEntities.g:822:3: ( '[' )
             {
              before(grammarAccess.getAttributeTypeAccess().getArrayLeftSquareBracketKeyword_1_0_0()); 
-            // InternalEntities.g:877:3: ( '[' )
-            // InternalEntities.g:878:4: '['
+            // InternalEntities.g:823:3: ( '[' )
+            // InternalEntities.g:824:4: '['
             {
              before(grammarAccess.getAttributeTypeAccess().getArrayLeftSquareBracketKeyword_1_0_0()); 
             match(input,20,FOLLOW_2); 
@@ -2624,17 +2464,17 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__AttributeType__LengthAssignment_1_1"
-    // InternalEntities.g:889:1: rule__AttributeType__LengthAssignment_1_1 : ( RULE_INT ) ;
+    // InternalEntities.g:835:1: rule__AttributeType__LengthAssignment_1_1 : ( RULE_INT ) ;
     public final void rule__AttributeType__LengthAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:893:1: ( ( RULE_INT ) )
-            // InternalEntities.g:894:2: ( RULE_INT )
+            // InternalEntities.g:839:1: ( ( RULE_INT ) )
+            // InternalEntities.g:840:2: ( RULE_INT )
             {
-            // InternalEntities.g:894:2: ( RULE_INT )
-            // InternalEntities.g:895:3: RULE_INT
+            // InternalEntities.g:840:2: ( RULE_INT )
+            // InternalEntities.g:841:3: RULE_INT
             {
              before(grammarAccess.getAttributeTypeAccess().getLengthINTTerminalRuleCall_1_1_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -2660,59 +2500,22 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
     // $ANTLR end "rule__AttributeType__LengthAssignment_1_1"
 
 
-    // $ANTLR start "rule__AttributeType__NameAssignment_2"
-    // InternalEntities.g:904:1: rule__AttributeType__NameAssignment_2 : ( RULE_ID ) ;
-    public final void rule__AttributeType__NameAssignment_2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalEntities.g:908:1: ( ( RULE_ID ) )
-            // InternalEntities.g:909:2: ( RULE_ID )
-            {
-            // InternalEntities.g:909:2: ( RULE_ID )
-            // InternalEntities.g:910:3: RULE_ID
-            {
-             before(grammarAccess.getAttributeTypeAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getAttributeTypeAccess().getNameIDTerminalRuleCall_2_0()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__AttributeType__NameAssignment_2"
-
-
     // $ANTLR start "rule__BasicType__TypeNameAssignment"
-    // InternalEntities.g:919:1: rule__BasicType__TypeNameAssignment : ( ( rule__BasicType__TypeNameAlternatives_0 ) ) ;
+    // InternalEntities.g:850:1: rule__BasicType__TypeNameAssignment : ( ( rule__BasicType__TypeNameAlternatives_0 ) ) ;
     public final void rule__BasicType__TypeNameAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:923:1: ( ( ( rule__BasicType__TypeNameAlternatives_0 ) ) )
-            // InternalEntities.g:924:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
+            // InternalEntities.g:854:1: ( ( ( rule__BasicType__TypeNameAlternatives_0 ) ) )
+            // InternalEntities.g:855:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
             {
-            // InternalEntities.g:924:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
-            // InternalEntities.g:925:3: ( rule__BasicType__TypeNameAlternatives_0 )
+            // InternalEntities.g:855:2: ( ( rule__BasicType__TypeNameAlternatives_0 ) )
+            // InternalEntities.g:856:3: ( rule__BasicType__TypeNameAlternatives_0 )
             {
              before(grammarAccess.getBasicTypeAccess().getTypeNameAlternatives_0()); 
-            // InternalEntities.g:926:3: ( rule__BasicType__TypeNameAlternatives_0 )
-            // InternalEntities.g:926:4: rule__BasicType__TypeNameAlternatives_0
+            // InternalEntities.g:857:3: ( rule__BasicType__TypeNameAlternatives_0 )
+            // InternalEntities.g:857:4: rule__BasicType__TypeNameAlternatives_0
             {
             pushFollow(FOLLOW_2);
             rule__BasicType__TypeNameAlternatives_0();
@@ -2745,21 +2548,21 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
 
 
     // $ANTLR start "rule__EntityType__EntityAssignment"
-    // InternalEntities.g:934:1: rule__EntityType__EntityAssignment : ( ( RULE_ID ) ) ;
+    // InternalEntities.g:865:1: rule__EntityType__EntityAssignment : ( ( RULE_ID ) ) ;
     public final void rule__EntityType__EntityAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalEntities.g:938:1: ( ( ( RULE_ID ) ) )
-            // InternalEntities.g:939:2: ( ( RULE_ID ) )
+            // InternalEntities.g:869:1: ( ( ( RULE_ID ) ) )
+            // InternalEntities.g:870:2: ( ( RULE_ID ) )
             {
-            // InternalEntities.g:939:2: ( ( RULE_ID ) )
-            // InternalEntities.g:940:3: ( RULE_ID )
+            // InternalEntities.g:870:2: ( ( RULE_ID ) )
+            // InternalEntities.g:871:3: ( RULE_ID )
             {
              before(grammarAccess.getEntityTypeAccess().getEntityEntityCrossReference_0()); 
-            // InternalEntities.g:941:3: ( RULE_ID )
-            // InternalEntities.g:942:4: RULE_ID
+            // InternalEntities.g:872:3: ( RULE_ID )
+            // InternalEntities.g:873:4: RULE_ID
             {
              before(grammarAccess.getEntityTypeAccess().getEntityEntityIDTerminalRuleCall_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -2801,7 +2604,7 @@ public class InternalEntitiesParser extends AbstractInternalContentAssistParser 
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000013810L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000003812L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100010L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000100000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080020L});
 
 }
