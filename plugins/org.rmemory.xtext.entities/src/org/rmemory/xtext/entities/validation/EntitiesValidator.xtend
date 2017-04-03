@@ -3,6 +3,12 @@
  */
 package org.rmemory.xtext.entities.validation
 
+import org.eclipse.xtext.validation.Check
+import org.rmemory.xtext.entities.entities.Attribute
+import org.rmemory.xtext.entities.entities.EntitiesPackage
+import org.rmemory.xtext.entities.entities.Entity
+
+import static extension java.lang.Character.*
 
 /**
  * This class contains custom validation rules. 
@@ -11,6 +17,39 @@ package org.rmemory.xtext.entities.validation
  */
 class EntitiesValidator extends AbstractEntitiesValidator {
 	
+	@Check
+	def checkNoCycleInEntityHierarchy(Entity entity) {
+		if (entity.superType == null) {
+			return // nothing to check
+		}
+		
+		val visitedEntities = newHashSet(entity)
+		
+		var current = entity.superType
+		while (current != null) {
+			if (visitedEntities.contains(current)) {
+				error("cycle in hierarchy of entity '" + current.name + "'",
+					EntitiesPackage.eINSTANCE.entity_SuperType)
+					return
+			}
+			visitedEntities.add(current)
+			current = current.superType
+		}
+	}
+	
+	@Check
+	def checkEntitiesNameStartsWithCapital(Entity entity) {
+		if (entity.name.charAt(0).lowerCase)
+			warning ("Entity name should start with a capital",
+				EntitiesPackage.eINSTANCE.entity_Name)
+	}
+	
+	@Check
+	def checkAttributeNameStartsWithLowercase(Attribute attr) {
+		if (attr.name.charAt(0).upperCase)
+			warning("Attribute name should start with a capital",
+				EntitiesPackage.eINSTANCE.attribute_Name)
+	}
 //	public static val INVALID_NAME = 'invalidName'
 //
 //	@Check
