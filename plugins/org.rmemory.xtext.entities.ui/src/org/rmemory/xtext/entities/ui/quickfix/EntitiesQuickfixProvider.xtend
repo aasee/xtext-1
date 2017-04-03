@@ -3,12 +3,17 @@
  */
 package org.rmemory.xtext.entities.ui.quickfix
 
+import org.eclipse.xtext.diagnostics.Diagnostic
 import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
+import org.rmemory.xtext.entities.entities.EntitiesFactory
 import org.rmemory.xtext.entities.entities.Entity
+import org.rmemory.xtext.entities.entities.Model
 import org.rmemory.xtext.entities.validation.EntitiesValidator
+
+import static extension org.eclipse.xtext.EcoreUtil2.*
 
 /**
  * Custom quickfixes.
@@ -16,6 +21,25 @@ import org.rmemory.xtext.entities.validation.EntitiesValidator
  * See https://www.eclipse.org/Xtext/documentation/310_eclipse_support.html#quick-fixes
  */
 class EntitiesQuickfixProvider extends DefaultQuickfixProvider {
+	
+@Fix(Diagnostic.LINKING_DIAGNOSTIC)
+def void createMissingEntity(Issue issue,
+	IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Create missing entity",
+			"Create missing entity",
+			"Entity.gif",
+			[element, context |
+				val currentEntity = element.getContainerOfType(Entity)
+				val model = currentEntity.eContainer as Model
+				model.entities.add(
+					model.entities.indexOf(currentEntity) + 1,
+					EntitiesFactory.eINSTANCE.createEntity() => [
+						name = context.xtextDocument.get(issue.offset, issue.length)]
+					)
+			] 
+		)
+	}
 
 @Fix(EntitiesValidator.INVALID_ENTITY_NAME)
 def void capitalizeEntityNameFirstLetter(Issue issue, 
