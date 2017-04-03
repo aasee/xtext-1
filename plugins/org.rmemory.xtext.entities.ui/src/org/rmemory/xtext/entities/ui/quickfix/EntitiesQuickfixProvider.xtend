@@ -7,6 +7,7 @@ import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
+import org.rmemory.xtext.entities.entities.Entity
 import org.rmemory.xtext.entities.validation.EntitiesValidator
 
 /**
@@ -26,6 +27,17 @@ def void capitalizeEntityNameFirstLetter(Issue issue,
 def void capitalizeAttributeFirstLetter(Issue issue,
 	IssueResolutionAcceptor acceptor) {
 		changeFirstLetterToUpperCase(issue, acceptor)
+	}
+	
+@Fix (EntitiesValidator.HIERARCHY_CYCLE)
+def void removeSuperType(Issue issue, 
+	IssueResolutionAcceptor acceptor) {
+		acceptor.accept(issue,
+			"Remove SuperType",
+			'''Remove supertype '«issue.data.get(0)» ''',
+			"delete_obj.gif",
+			[element, context | (element as Entity).superType = null]
+		)
 	}
 	
 protected def void changeFirstLetterToUpperCase(Issue issue, 
