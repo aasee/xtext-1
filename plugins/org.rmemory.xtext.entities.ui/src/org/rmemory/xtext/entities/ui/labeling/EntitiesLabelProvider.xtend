@@ -6,6 +6,10 @@ package org.rmemory.xtext.entities.ui.labeling
 import com.google.inject.Inject
 import org.eclipse.emf.edit.ui.provider.AdapterFactoryLabelProvider
 import org.eclipse.xtext.ui.label.DefaultEObjectLabelProvider
+import org.rmemory.xtext.entities.entities.Attribute
+import org.rmemory.xtext.entities.entities.AttributeType
+import org.rmemory.xtext.entities.entities.BasicType
+import org.rmemory.xtext.entities.entities.EntityType
 
 /**
  * Provides labels for EObjects.
@@ -19,6 +23,15 @@ class EntitiesLabelProvider extends DefaultEObjectLabelProvider {
 		super(delegate);
 	}
 
+	@Inject extension TypeRepresentation
+	
+	def text (Attribute a) {
+		a.name + 
+			if (a.type != null)
+				" : " + a.type.representation
+			else ""
+	}
+
 	// Labels and icons can be computed like this:
 	
 //	def text(Greeting ele) {
@@ -28,4 +41,16 @@ class EntitiesLabelProvider extends DefaultEObjectLabelProvider {
 //	def image(Greeting ele) {
 //		'Greeting.gif'
 //	}
+}
+
+class TypeRepresentation {
+	def representation (AttributeType t) {
+		val elementType = t.elementType
+		val elementTypeRepr = 
+		switch (elementType) {
+			BasicType : elementType.typeName
+			EntityType : elementType?.entity.name
+		}
+		elementTypeRepr + if  (t.array) "[]" else ""
+	}
 }
