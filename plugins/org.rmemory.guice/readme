@@ -1,0 +1,81 @@
+How does the Service initialize the fields (logger and processor) without
+hardcoding them in a constructor? What if a custom logger is used?
+
+These issues can be solved with dependency injection (guice). 
+
+A Factory Pattern could be used, but that would ultimately still involve
+hardcoding somewhere.
+
+You annotate the fields you want Guice to inject wtih the @Inject 
+annotation (com.google.inject.Inject)
+
+public class Service {
+	@Inject private Logger logger;
+	@Inject private Processor processor;
+	
+	public void execute (String command) {
+		logger.log("executing " + command);
+		processor.process(command);
+		logger.log("executed " + command);
+	}
+} 
+
+public class ProcessorImpl implements Processor {
+	@Inject private Logger logger;
+
+	@Override
+	public void process(Object o) {
+		logger.log("processing");
+		System.out.println("processing " + o + "...");
+
+	}
+}
+
+To use Guice, you need to "bind" interfaces, abstract classes, and custom classes.
+Not concrete classes. For example, in our case the Processor and ProcessorImpl
+need to be bound, but not Logger because Logger is concrete. But if we did have
+a custom Logger, it would need to be bound as well.
+
+public class StandardModule extends AbstractModule {
+	@Override
+	protected void configure() {
+		bind(Processor.class).to(ProcessorImpl.class);
+	}
+}
+
+Note that in the above example, Logger did not need to have a binding. On the other hand, I could have done this:
+
+public class CustomModule extends AbstractModule {
+	@Override
+	protected void configure() {
+		bind(Logger.class).to(CustomLogger.class);
+		bind(Processor.class).to(AdvancedProcessor.class);
+	}
+}
+
+Creating instances with an injector insures the module will use the correct classes consistently. 
+For example, the CustomLogger would be used by both Service and Processor.
+
+If you want to objects to be instantiated inside of method bodies instead of in fields, you can use a 
+provider. For example:
+
+public class Logger {
+	@Inject
+	private Provider<Utility> utilityProvider;
+	
+	public void log(String message) {
+		System.out.println("LOG: " + message + "-" + utilityProvider.get().m());
+	}
+}
+
+In the example above, the get method produces an instance of Utility, which in this case has a method m().
+This means anew Utility class will be created each time a message is logged.
+
+public class CustomModule extends AbstractModule {
+	@Override
+	protected void configure() {
+		bind(Logger.class).to(CustomLogger.class);
+		bind(Processor.class).to(AdvancedProcessor.class);
+		bind(Utility.class).to(CustomUtility.class);
+	}
+}
