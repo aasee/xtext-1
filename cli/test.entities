@@ -1,0 +1,10 @@
+entity A {
+    string foo;
+    boolean bar;
+}
+
+entity B {}
+
+entity C extends A {
+    int myint;
+}
