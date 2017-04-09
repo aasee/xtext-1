@@ -38,9 +38,9 @@ class USAddress {
 	refers PurchaseOrder[1] po
 }
 
-//@Ecore(
-//	constraints='NonNegativeQuantity quantity'
-//)
+@Ecore(
+	constraints='NonNegativeQuantity quantity Goober comment'
+)
 class Item {
 	String[1] productName
 	int[1] quantity

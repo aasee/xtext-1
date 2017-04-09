@@ -24,7 +24,7 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see org.rmemory.xcore.po.model.po.PoPackage#getItem()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NonNegativeQuantity quantity Goober comment'"
  * @generated
  */
 public interface Item extends EObject {
