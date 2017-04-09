@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="po" nsURI="http://www.rmemory.org/po/2017/ecore" nsPrefix="po">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
+    <details key="complianceLevel" value="7.0"/>
+    <details key="editDirectory" value="/org.rmemory.xcore.po.model/src"/>
+    <details key="editorDirectory" value="/org.rmemory.xcore.po.model/src"/>
+    <details key="modelPluginClass" value="org.rmemory.xcore.po.model.PoPlugin"/>
+    <details key="editPluginClass" value="org.rmemory.xcore.po.model.PoPlugin"/>
+    <details key="editorPluginClass" value="org.rmemory.xcore.po.model.PoPlugin"/>
+    <details key="featureMapWrapperInternalInterface" value=""/>
+    <details key="testSuiteClass" value="org.rmemory.xcore.po.model.tests.PoAllTests"/>
+    <details key="basePackage" value="org.rmemory.xcore.po.model"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="PurchaseOrder">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shipTo" unique="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="billTo" unique="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="items" upperBound="-1"
+        eType="#//Item" containment="true" resolveProxies="false" eOpposite="#//Item/purchaseOrder"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Item">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="purchaseOrder" lowerBound="1"
+        eType="#//PurchaseOrder" eOpposite="#//PurchaseOrder/items"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="productName" unique="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" unique="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="price" unique="false" lowerBound="1"
+        eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EFloat"/>
+  </eClassifiers>
+</ecore:EPackage>

@@ -1,0 +1,33 @@
+// Properties for the generated *.genmodel model generator file.
+@GenModel(
+	complianceLevel="7.0",
+	editDirectory="/org.rmemory.xcore.po.model/src",
+	editorDirectory="/org.rmemory.xcore.po.model/src",
+	modelPluginClass="org.rmemory.xcore.po.model.PoPlugin",
+	editPluginClass="org.rmemory.xcore.po.model.PoPlugin",
+	editorPluginClass="org.rmemory.xcore.po.model.PoPlugin",
+	featureMapWrapperInternalInterface="",
+	testSuiteClass="org.rmemory.xcore.po.model.tests.PoAllTests",
+	basePackage="org.rmemory.xcore.po.model"
+)
+
+// Properties for the generated *.ecore model file.
+@Ecore(
+	nsURI="http://www.rmemory.org/po/2017/ecore"
+)
+
+package po
+
+class PurchaseOrder {
+	String[1] shipTo
+	String[1] billTo
+	
+	contains Item [*]items opposite purchaseOrder
+}
+
+class Item {
+	refers PurchaseOrder[1] purchaseOrder opposite items
+	String[1] productName
+	int[1] quantity
+	float[1] price
+}
