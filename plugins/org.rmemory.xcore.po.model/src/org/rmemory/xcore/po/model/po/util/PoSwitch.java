@@ -72,6 +72,12 @@ public class PoSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case PoPackage.US_ADDRESS: {
+				USAddress usAddress = (USAddress)theEObject;
+				T result = caseUSAddress(usAddress);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case PoPackage.ITEM: {
 				Item item = (Item)theEObject;
 				T result = caseItem(item);
@@ -94,6 +100,21 @@ public class PoSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T casePurchaseOrder(PurchaseOrder object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>US Address</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>US Address</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseUSAddress(USAddress object) {
 		return null;
 	}
 

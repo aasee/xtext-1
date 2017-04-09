@@ -2,6 +2,7 @@
  */
 package org.rmemory.xcore.po.model.po;
 
+import java.util.Date;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -13,10 +14,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.rmemory.xcore.po.model.po.Item#getPurchaseOrder <em>Purchase Order</em>}</li>
  *   <li>{@link org.rmemory.xcore.po.model.po.Item#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.rmemory.xcore.po.model.po.Item#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.rmemory.xcore.po.model.po.Item#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.Item#getUSPrice <em>US Price</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.Item#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.Item#getShipDate <em>Ship Date</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.Item#getPartNum <em>Part Num</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.Item#getPurchaseOrder <em>Purchase Order</em>}</li>
  * </ul>
  *
  * @see org.rmemory.xcore.po.model.po.PoPackage#getItem()
@@ -105,29 +109,107 @@ public interface Item extends EObject {
 	void setQuantity(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Price</b></em>' attribute.
+	 * Returns the value of the '<em><b>US Price</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Price</em>' attribute isn't clear,
+	 * If the meaning of the '<em>US Price</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Price</em>' attribute.
-	 * @see #setPrice(float)
-	 * @see org.rmemory.xcore.po.model.po.PoPackage#getItem_Price()
+	 * @return the value of the '<em>US Price</em>' attribute.
+	 * @see #setUSPrice(int)
+	 * @see org.rmemory.xcore.po.model.po.PoPackage#getItem_USPrice()
 	 * @model unique="false" required="true"
 	 * @generated
 	 */
-	float getPrice();
+	int getUSPrice();
 
 	/**
-	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.Item#getPrice <em>Price</em>}' attribute.
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.Item#getUSPrice <em>US Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Price</em>' attribute.
-	 * @see #getPrice()
+	 * @param value the new value of the '<em>US Price</em>' attribute.
+	 * @see #getUSPrice()
 	 * @generated
 	 */
-	void setPrice(float value);
+	void setUSPrice(int value);
+
+	/**
+	 * Returns the value of the '<em><b>Comment</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comment</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Comment</em>' attribute.
+	 * @see #setComment(String)
+	 * @see org.rmemory.xcore.po.model.po.PoPackage#getItem_Comment()
+	 * @model unique="false" required="true"
+	 * @generated
+	 */
+	String getComment();
+
+	/**
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.Item#getComment <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Comment</em>' attribute.
+	 * @see #getComment()
+	 * @generated
+	 */
+	void setComment(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Ship Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Ship Date</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Ship Date</em>' attribute.
+	 * @see #setShipDate(Date)
+	 * @see org.rmemory.xcore.po.model.po.PoPackage#getItem_ShipDate()
+	 * @model unique="false" dataType="org.rmemory.xcore.po.model.po.Date" required="true"
+	 * @generated
+	 */
+	Date getShipDate();
+
+	/**
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.Item#getShipDate <em>Ship Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Ship Date</em>' attribute.
+	 * @see #getShipDate()
+	 * @generated
+	 */
+	void setShipDate(Date value);
+
+	/**
+	 * Returns the value of the '<em><b>Part Num</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Part Num</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Part Num</em>' attribute.
+	 * @see #setPartNum(String)
+	 * @see org.rmemory.xcore.po.model.po.PoPackage#getItem_PartNum()
+	 * @model unique="false" dataType="org.rmemory.xcore.po.model.po.SKU" required="true"
+	 * @generated
+	 */
+	String getPartNum();
+
+	/**
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.Item#getPartNum <em>Part Num</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Part Num</em>' attribute.
+	 * @see #getPartNum()
+	 * @generated
+	 */
+	void setPartNum(String value);
 
 } // Item

@@ -26,56 +26,56 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface PurchaseOrder extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Ship To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Ship To</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ship To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ship To</em>' attribute.
-	 * @see #setShipTo(String)
+	 * @return the value of the '<em>Ship To</em>' containment reference.
+	 * @see #setShipTo(USAddress)
 	 * @see org.rmemory.xcore.po.model.po.PoPackage#getPurchaseOrder_ShipTo()
-	 * @model unique="false" required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	String getShipTo();
+	USAddress getShipTo();
 
 	/**
-	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.PurchaseOrder#getShipTo <em>Ship To</em>}' attribute.
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.PurchaseOrder#getShipTo <em>Ship To</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Ship To</em>' attribute.
+	 * @param value the new value of the '<em>Ship To</em>' containment reference.
 	 * @see #getShipTo()
 	 * @generated
 	 */
-	void setShipTo(String value);
+	void setShipTo(USAddress value);
 
 	/**
-	 * Returns the value of the '<em><b>Bill To</b></em>' attribute.
+	 * Returns the value of the '<em><b>Bill To</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bill To</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Bill To</em>' attribute.
-	 * @see #setBillTo(String)
+	 * @return the value of the '<em>Bill To</em>' containment reference.
+	 * @see #setBillTo(USAddress)
 	 * @see org.rmemory.xcore.po.model.po.PoPackage#getPurchaseOrder_BillTo()
-	 * @model unique="false" required="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	String getBillTo();
+	USAddress getBillTo();
 
 	/**
-	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.PurchaseOrder#getBillTo <em>Bill To</em>}' attribute.
+	 * Sets the value of the '{@link org.rmemory.xcore.po.model.po.PurchaseOrder#getBillTo <em>Bill To</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Bill To</em>' attribute.
+	 * @param value the new value of the '<em>Bill To</em>' containment reference.
 	 * @see #getBillTo()
 	 * @generated
 	 */
-	void setBillTo(String value);
+	void setBillTo(USAddress value);
 
 	/**
 	 * Returns the value of the '<em><b>Items</b></em>' containment reference list.

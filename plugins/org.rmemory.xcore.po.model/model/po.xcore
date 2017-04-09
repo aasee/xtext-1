@@ -18,19 +18,36 @@
 
 package po
 
+type Date wraps java.util.Date
+type SKU wraps java.lang.String
+
 class PurchaseOrder {
-	String[1] shipTo
-	String[1] billTo
+	contains USAddress[1] shipTo
+	contains USAddress[1] billTo
+	contains Item[*] items opposite purchaseOrder
+}
+
+class USAddress {
+	String[1] name
+	String[1] street
+	String[1] city
+	String[1] state
+	int[1] zip
+	String[1] country = "US"
 	
-	contains Item [*]items opposite purchaseOrder
+	refers PurchaseOrder[1] po
 }
 
 //@Ecore(
 //	constraints='NonNegativeQuantity quantity'
 //)
 class Item {
-	refers PurchaseOrder[1] purchaseOrder opposite items
 	String[1] productName
 	int[1] quantity
-	float[1] price
+	int[1] USPrice
+	String[1] comment
+	Date[1] shipDate
+	SKU[1] partNum
+	
+	container PurchaseOrder[1] purchaseOrder opposite items
 }

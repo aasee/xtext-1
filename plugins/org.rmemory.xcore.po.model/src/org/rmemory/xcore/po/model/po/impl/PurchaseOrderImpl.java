@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.rmemory.xcore.po.model.po.Item;
 import org.rmemory.xcore.po.model.po.PoPackage;
 import org.rmemory.xcore.po.model.po.PurchaseOrder;
+import org.rmemory.xcore.po.model.po.USAddress;
 
 /**
  * <!-- begin-user-doc -->
@@ -39,44 +40,24 @@ import org.rmemory.xcore.po.model.po.PurchaseOrder;
  */
 public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements PurchaseOrder {
 	/**
-	 * The default value of the '{@link #getShipTo() <em>Ship To</em>}' attribute.
+	 * The cached value of the '{@link #getShipTo() <em>Ship To</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getShipTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String SHIP_TO_EDEFAULT = null;
+	protected USAddress shipTo;
 
 	/**
-	 * The cached value of the '{@link #getShipTo() <em>Ship To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getShipTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String shipTo = SHIP_TO_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getBillTo() <em>Bill To</em>}' attribute.
+	 * The cached value of the '{@link #getBillTo() <em>Bill To</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBillTo()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String BILL_TO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getBillTo() <em>Bill To</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBillTo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String billTo = BILL_TO_EDEFAULT;
+	protected USAddress billTo;
 
 	/**
 	 * The cached value of the '{@link #getItems() <em>Items</em>}' containment reference list.
@@ -112,7 +93,7 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getShipTo() {
+	public USAddress getShipTo() {
 		return shipTo;
 	}
 
@@ -121,11 +102,14 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setShipTo(String newShipTo) {
-		String oldShipTo = shipTo;
+	public NotificationChain basicSetShipTo(USAddress newShipTo, NotificationChain msgs) {
+		USAddress oldShipTo = shipTo;
 		shipTo = newShipTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__SHIP_TO, oldShipTo, shipTo));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__SHIP_TO, oldShipTo, newShipTo);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -133,7 +117,26 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBillTo() {
+	public void setShipTo(USAddress newShipTo) {
+		if (newShipTo != shipTo) {
+			NotificationChain msgs = null;
+			if (shipTo != null)
+				msgs = ((InternalEObject)shipTo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PoPackage.PURCHASE_ORDER__SHIP_TO, null, msgs);
+			if (newShipTo != null)
+				msgs = ((InternalEObject)newShipTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PoPackage.PURCHASE_ORDER__SHIP_TO, null, msgs);
+			msgs = basicSetShipTo(newShipTo, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__SHIP_TO, newShipTo, newShipTo));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public USAddress getBillTo() {
 		return billTo;
 	}
 
@@ -142,11 +145,33 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBillTo(String newBillTo) {
-		String oldBillTo = billTo;
+	public NotificationChain basicSetBillTo(USAddress newBillTo, NotificationChain msgs) {
+		USAddress oldBillTo = billTo;
 		billTo = newBillTo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__BILL_TO, oldBillTo, billTo));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__BILL_TO, oldBillTo, newBillTo);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBillTo(USAddress newBillTo) {
+		if (newBillTo != billTo) {
+			NotificationChain msgs = null;
+			if (billTo != null)
+				msgs = ((InternalEObject)billTo).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - PoPackage.PURCHASE_ORDER__BILL_TO, null, msgs);
+			if (newBillTo != null)
+				msgs = ((InternalEObject)newBillTo).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - PoPackage.PURCHASE_ORDER__BILL_TO, null, msgs);
+			msgs = basicSetBillTo(newBillTo, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.PURCHASE_ORDER__BILL_TO, newBillTo, newBillTo));
 	}
 
 	/**
@@ -184,6 +209,10 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case PoPackage.PURCHASE_ORDER__SHIP_TO:
+				return basicSetShipTo(null, msgs);
+			case PoPackage.PURCHASE_ORDER__BILL_TO:
+				return basicSetBillTo(null, msgs);
 			case PoPackage.PURCHASE_ORDER__ITEMS:
 				return ((InternalEList<?>)getItems()).basicRemove(otherEnd, msgs);
 		}
@@ -218,10 +247,10 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case PoPackage.PURCHASE_ORDER__SHIP_TO:
-				setShipTo((String)newValue);
+				setShipTo((USAddress)newValue);
 				return;
 			case PoPackage.PURCHASE_ORDER__BILL_TO:
-				setBillTo((String)newValue);
+				setBillTo((USAddress)newValue);
 				return;
 			case PoPackage.PURCHASE_ORDER__ITEMS:
 				getItems().clear();
@@ -240,10 +269,10 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case PoPackage.PURCHASE_ORDER__SHIP_TO:
-				setShipTo(SHIP_TO_EDEFAULT);
+				setShipTo((USAddress)null);
 				return;
 			case PoPackage.PURCHASE_ORDER__BILL_TO:
-				setBillTo(BILL_TO_EDEFAULT);
+				setBillTo((USAddress)null);
 				return;
 			case PoPackage.PURCHASE_ORDER__ITEMS:
 				getItems().clear();
@@ -261,31 +290,13 @@ public class PurchaseOrderImpl extends MinimalEObjectImpl.Container implements P
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case PoPackage.PURCHASE_ORDER__SHIP_TO:
-				return SHIP_TO_EDEFAULT == null ? shipTo != null : !SHIP_TO_EDEFAULT.equals(shipTo);
+				return shipTo != null;
 			case PoPackage.PURCHASE_ORDER__BILL_TO:
-				return BILL_TO_EDEFAULT == null ? billTo != null : !BILL_TO_EDEFAULT.equals(billTo);
+				return billTo != null;
 			case PoPackage.PURCHASE_ORDER__ITEMS:
 				return items != null && !items.isEmpty();
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (shipTo: ");
-		result.append(shipTo);
-		result.append(", billTo: ");
-		result.append(billTo);
-		result.append(')');
-		return result.toString();
 	}
 
 } //PurchaseOrderImpl

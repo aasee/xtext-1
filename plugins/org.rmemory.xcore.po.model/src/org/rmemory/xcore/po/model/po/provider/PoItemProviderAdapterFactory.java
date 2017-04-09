@@ -95,6 +95,29 @@ public class PoItemProviderAdapterFactory extends PoAdapterFactory implements Co
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link org.rmemory.xcore.po.model.po.USAddress} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected USAddressItemProvider usAddressItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.rmemory.xcore.po.model.po.USAddress}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createUSAddressAdapter() {
+		if (usAddressItemProvider == null) {
+			usAddressItemProvider = new USAddressItemProvider(this);
+		}
+
+		return usAddressItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link org.rmemory.xcore.po.model.po.Item} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -217,6 +240,7 @@ public class PoItemProviderAdapterFactory extends PoAdapterFactory implements Co
 	 */
 	public void dispose() {
 		if (purchaseOrderItemProvider != null) purchaseOrderItemProvider.dispose();
+		if (usAddressItemProvider != null) usAddressItemProvider.dispose();
 		if (itemItemProvider != null) itemItemProvider.dispose();
 	}
 

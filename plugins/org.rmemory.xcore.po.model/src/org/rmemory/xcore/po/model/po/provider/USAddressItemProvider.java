@@ -24,16 +24,16 @@ import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import org.rmemory.xcore.po.model.PoPlugin;
 
-import org.rmemory.xcore.po.model.po.Item;
 import org.rmemory.xcore.po.model.po.PoPackage;
+import org.rmemory.xcore.po.model.po.USAddress;
 
 /**
- * This is the item provider adapter for a {@link org.rmemory.xcore.po.model.po.Item} object.
+ * This is the item provider adapter for a {@link org.rmemory.xcore.po.model.po.USAddress} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ItemItemProvider 
+public class USAddressItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -47,7 +47,7 @@ public class ItemItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ItemItemProvider(AdapterFactory adapterFactory) {
+	public USAddressItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,53 +62,31 @@ public class ItemItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addProductNamePropertyDescriptor(object);
-			addQuantityPropertyDescriptor(object);
-			addUSPricePropertyDescriptor(object);
-			addCommentPropertyDescriptor(object);
-			addShipDatePropertyDescriptor(object);
-			addPartNumPropertyDescriptor(object);
-			addPurchaseOrderPropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addStreetPropertyDescriptor(object);
+			addCityPropertyDescriptor(object);
+			addStatePropertyDescriptor(object);
+			addZipPropertyDescriptor(object);
+			addCountryPropertyDescriptor(object);
+			addPoPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Purchase Order feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPurchaseOrderPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Item_purchaseOrder_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_purchaseOrder_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__PURCHASE_ORDER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Product Name feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addProductNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Item_productName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_productName_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__PRODUCT_NAME,
+				 getString("_UI_USAddress_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_name_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__NAME,
 				 true,
 				 false,
 				 false,
@@ -118,19 +96,85 @@ public class ItemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Quantity feature.
+	 * This adds a property descriptor for the Street feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addQuantityPropertyDescriptor(Object object) {
+	protected void addStreetPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Item_quantity_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_quantity_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__QUANTITY,
+				 getString("_UI_USAddress_street_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_street_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__STREET,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the City feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addCityPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_USAddress_city_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_city_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__CITY,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the State feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addStatePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_USAddress_state_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_state_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__STATE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Zip feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addZipPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_USAddress_zip_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_zip_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__ZIP,
 				 true,
 				 false,
 				 false,
@@ -140,41 +184,19 @@ public class ItemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the US Price feature.
+	 * This adds a property descriptor for the Country feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addUSPricePropertyDescriptor(Object object) {
+	protected void addCountryPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Item_USPrice_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_USPrice_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__US_PRICE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Comment feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addCommentPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Item_comment_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_comment_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__COMMENT,
+				 getString("_UI_USAddress_country_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_country_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__COUNTRY,
 				 true,
 				 false,
 				 false,
@@ -184,58 +206,36 @@ public class ItemItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Ship Date feature.
+	 * This adds a property descriptor for the Po feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addShipDatePropertyDescriptor(Object object) {
+	protected void addPoPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Item_shipDate_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_shipDate_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__SHIP_DATE,
+				 getString("_UI_USAddress_po_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_USAddress_po_feature", "_UI_USAddress_type"),
+				 PoPackage.Literals.US_ADDRESS__PO,
 				 true,
 				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Part Num feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPartNumPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Item_partNum_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Item_partNum_feature", "_UI_Item_type"),
-				 PoPackage.Literals.ITEM__PART_NUM,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Item.gif.
+	 * This returns USAddress.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Item"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/USAddress"));
 	}
 
 	/**
@@ -246,10 +246,10 @@ public class ItemItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Item)object).getProductName();
+		String label = ((USAddress)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Item_type") :
-			getString("_UI_Item_type") + " " + label;
+			getString("_UI_USAddress_type") :
+			getString("_UI_USAddress_type") + " " + label;
 	}
 	
 
@@ -264,13 +264,13 @@ public class ItemItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Item.class)) {
-			case PoPackage.ITEM__PRODUCT_NAME:
-			case PoPackage.ITEM__QUANTITY:
-			case PoPackage.ITEM__US_PRICE:
-			case PoPackage.ITEM__COMMENT:
-			case PoPackage.ITEM__SHIP_DATE:
-			case PoPackage.ITEM__PART_NUM:
+		switch (notification.getFeatureID(USAddress.class)) {
+			case PoPackage.US_ADDRESS__NAME:
+			case PoPackage.US_ADDRESS__STREET:
+			case PoPackage.US_ADDRESS__CITY:
+			case PoPackage.US_ADDRESS__STATE:
+			case PoPackage.US_ADDRESS__ZIP:
+			case PoPackage.US_ADDRESS__COUNTRY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

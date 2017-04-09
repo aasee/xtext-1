@@ -72,6 +72,10 @@ public class PoAdapterFactory extends AdapterFactoryImpl {
 				return createPurchaseOrderAdapter();
 			}
 			@Override
+			public Adapter caseUSAddress(USAddress object) {
+				return createUSAddressAdapter();
+			}
+			@Override
 			public Adapter caseItem(Item object) {
 				return createItemAdapter();
 			}
@@ -106,6 +110,20 @@ public class PoAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createPurchaseOrderAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link org.rmemory.xcore.po.model.po.USAddress <em>US Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see org.rmemory.xcore.po.model.po.USAddress
+	 * @generated
+	 */
+	public Adapter createUSAddressAdapter() {
 		return null;
 	}
 

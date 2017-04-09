@@ -26,16 +26,30 @@
   <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
   <genPackages prefix="Po" basePackage="org.rmemory.xcore.po.model" disposableProviderFactory="true"
       ecorePackage="po.ecore#/">
+    <genDataTypes ecoreDataType="po.ecore#//Date"/>
+    <genDataTypes ecoreDataType="po.ecore#//SKU"/>
     <genClasses ecoreClass="po.ecore#//PurchaseOrder">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//PurchaseOrder/shipTo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//PurchaseOrder/billTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference po.ecore#//PurchaseOrder/shipTo"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference po.ecore#//PurchaseOrder/billTo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference po.ecore#//PurchaseOrder/items"/>
     </genClasses>
+    <genClasses ecoreClass="po.ecore#//USAddress">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/street"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/city"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/state"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/zip"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//USAddress/country"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference po.ecore#//USAddress/po"/>
+    </genClasses>
     <genClasses ecoreClass="po.ecore#//Item">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference po.ecore#//Item/purchaseOrder"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/productName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/quantity"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/USPrice"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/comment"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/shipDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/partNum"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference po.ecore#//Item/purchaseOrder"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -2,6 +2,7 @@
  */
 package org.rmemory.xcore.po.model.po.impl;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -25,10 +26,13 @@ import org.rmemory.xcore.po.model.po.PurchaseOrder;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getPurchaseOrder <em>Purchase Order</em>}</li>
  *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getProductName <em>Product Name</em>}</li>
  *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getUSPrice <em>US Price</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getComment <em>Comment</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getShipDate <em>Ship Date</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getPartNum <em>Part Num</em>}</li>
+ *   <li>{@link org.rmemory.xcore.po.model.po.impl.ItemImpl#getPurchaseOrder <em>Purchase Order</em>}</li>
  * </ul>
  *
  * @generated
@@ -75,24 +79,84 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	protected int quantity = QUANTITY_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * The default value of the '{@link #getUSPrice() <em>US Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrice()
+	 * @see #getUSPrice()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final float PRICE_EDEFAULT = 0.0F;
+	protected static final int US_PRICE_EDEFAULT = 0;
 
 	/**
-	 * The cached value of the '{@link #getPrice() <em>Price</em>}' attribute.
+	 * The cached value of the '{@link #getUSPrice() <em>US Price</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPrice()
+	 * @see #getUSPrice()
 	 * @generated
 	 * @ordered
 	 */
-	protected float price = PRICE_EDEFAULT;
+	protected int usPrice = US_PRICE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String COMMENT_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getComment() <em>Comment</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getComment()
+	 * @generated
+	 * @ordered
+	 */
+	protected String comment = COMMENT_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getShipDate() <em>Ship Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date SHIP_DATE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getShipDate() <em>Ship Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getShipDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date shipDate = SHIP_DATE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPartNum() <em>Part Num</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartNum()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PART_NUM_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPartNum() <em>Part Num</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPartNum()
+	 * @generated
+	 * @ordered
+	 */
+	protected String partNum = PART_NUM_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -211,8 +275,8 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public float getPrice() {
-		return price;
+	public int getUSPrice() {
+		return usPrice;
 	}
 
 	/**
@@ -220,11 +284,74 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPrice(float newPrice) {
-		float oldPrice = price;
-		price = newPrice;
+	public void setUSPrice(int newUSPrice) {
+		int oldUSPrice = usPrice;
+		usPrice = newUSPrice;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__PRICE, oldPrice, price));
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__US_PRICE, oldUSPrice, usPrice));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getComment() {
+		return comment;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setComment(String newComment) {
+		String oldComment = comment;
+		comment = newComment;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__COMMENT, oldComment, comment));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getShipDate() {
+		return shipDate;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setShipDate(Date newShipDate) {
+		Date oldShipDate = shipDate;
+		shipDate = newShipDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__SHIP_DATE, oldShipDate, shipDate));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPartNum() {
+		return partNum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPartNum(String newPartNum) {
+		String oldPartNum = partNum;
+		partNum = newPartNum;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__PART_NUM, oldPartNum, partNum));
 	}
 
 	/**
@@ -279,15 +406,21 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case PoPackage.ITEM__PURCHASE_ORDER:
-				if (resolve) return getPurchaseOrder();
-				return basicGetPurchaseOrder();
 			case PoPackage.ITEM__PRODUCT_NAME:
 				return getProductName();
 			case PoPackage.ITEM__QUANTITY:
 				return getQuantity();
-			case PoPackage.ITEM__PRICE:
-				return getPrice();
+			case PoPackage.ITEM__US_PRICE:
+				return getUSPrice();
+			case PoPackage.ITEM__COMMENT:
+				return getComment();
+			case PoPackage.ITEM__SHIP_DATE:
+				return getShipDate();
+			case PoPackage.ITEM__PART_NUM:
+				return getPartNum();
+			case PoPackage.ITEM__PURCHASE_ORDER:
+				if (resolve) return getPurchaseOrder();
+				return basicGetPurchaseOrder();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -300,17 +433,26 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case PoPackage.ITEM__PURCHASE_ORDER:
-				setPurchaseOrder((PurchaseOrder)newValue);
-				return;
 			case PoPackage.ITEM__PRODUCT_NAME:
 				setProductName((String)newValue);
 				return;
 			case PoPackage.ITEM__QUANTITY:
 				setQuantity((Integer)newValue);
 				return;
-			case PoPackage.ITEM__PRICE:
-				setPrice((Float)newValue);
+			case PoPackage.ITEM__US_PRICE:
+				setUSPrice((Integer)newValue);
+				return;
+			case PoPackage.ITEM__COMMENT:
+				setComment((String)newValue);
+				return;
+			case PoPackage.ITEM__SHIP_DATE:
+				setShipDate((Date)newValue);
+				return;
+			case PoPackage.ITEM__PART_NUM:
+				setPartNum((String)newValue);
+				return;
+			case PoPackage.ITEM__PURCHASE_ORDER:
+				setPurchaseOrder((PurchaseOrder)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -324,17 +466,26 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case PoPackage.ITEM__PURCHASE_ORDER:
-				setPurchaseOrder((PurchaseOrder)null);
-				return;
 			case PoPackage.ITEM__PRODUCT_NAME:
 				setProductName(PRODUCT_NAME_EDEFAULT);
 				return;
 			case PoPackage.ITEM__QUANTITY:
 				setQuantity(QUANTITY_EDEFAULT);
 				return;
-			case PoPackage.ITEM__PRICE:
-				setPrice(PRICE_EDEFAULT);
+			case PoPackage.ITEM__US_PRICE:
+				setUSPrice(US_PRICE_EDEFAULT);
+				return;
+			case PoPackage.ITEM__COMMENT:
+				setComment(COMMENT_EDEFAULT);
+				return;
+			case PoPackage.ITEM__SHIP_DATE:
+				setShipDate(SHIP_DATE_EDEFAULT);
+				return;
+			case PoPackage.ITEM__PART_NUM:
+				setPartNum(PART_NUM_EDEFAULT);
+				return;
+			case PoPackage.ITEM__PURCHASE_ORDER:
+				setPurchaseOrder((PurchaseOrder)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -348,14 +499,20 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case PoPackage.ITEM__PURCHASE_ORDER:
-				return basicGetPurchaseOrder() != null;
 			case PoPackage.ITEM__PRODUCT_NAME:
 				return PRODUCT_NAME_EDEFAULT == null ? productName != null : !PRODUCT_NAME_EDEFAULT.equals(productName);
 			case PoPackage.ITEM__QUANTITY:
 				return quantity != QUANTITY_EDEFAULT;
-			case PoPackage.ITEM__PRICE:
-				return price != PRICE_EDEFAULT;
+			case PoPackage.ITEM__US_PRICE:
+				return usPrice != US_PRICE_EDEFAULT;
+			case PoPackage.ITEM__COMMENT:
+				return COMMENT_EDEFAULT == null ? comment != null : !COMMENT_EDEFAULT.equals(comment);
+			case PoPackage.ITEM__SHIP_DATE:
+				return SHIP_DATE_EDEFAULT == null ? shipDate != null : !SHIP_DATE_EDEFAULT.equals(shipDate);
+			case PoPackage.ITEM__PART_NUM:
+				return PART_NUM_EDEFAULT == null ? partNum != null : !PART_NUM_EDEFAULT.equals(partNum);
+			case PoPackage.ITEM__PURCHASE_ORDER:
+				return basicGetPurchaseOrder() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -374,8 +531,14 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 		result.append(productName);
 		result.append(", quantity: ");
 		result.append(quantity);
-		result.append(", price: ");
-		result.append(price);
+		result.append(", USPrice: ");
+		result.append(usPrice);
+		result.append(", comment: ");
+		result.append(comment);
+		result.append(", shipDate: ");
+		result.append(shipDate);
+		result.append(", partNum: ");
+		result.append(partNum);
 		result.append(')');
 		return result.toString();
 	}

@@ -2,8 +2,10 @@
  */
 package org.rmemory.xcore.po.model.po.impl;
 
+import java.util.Date;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -14,6 +16,7 @@ import org.rmemory.xcore.po.model.po.Item;
 import org.rmemory.xcore.po.model.po.PoFactory;
 import org.rmemory.xcore.po.model.po.PoPackage;
 import org.rmemory.xcore.po.model.po.PurchaseOrder;
+import org.rmemory.xcore.po.model.po.USAddress;
 
 /**
  * <!-- begin-user-doc -->
@@ -34,7 +37,28 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass usAddressEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass itemEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType dateEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType skuEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -114,8 +138,8 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPurchaseOrder_ShipTo() {
-		return (EAttribute)purchaseOrderEClass.getEStructuralFeatures().get(0);
+	public EReference getPurchaseOrder_ShipTo() {
+		return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -123,8 +147,8 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPurchaseOrder_BillTo() {
-		return (EAttribute)purchaseOrderEClass.getEStructuralFeatures().get(1);
+	public EReference getPurchaseOrder_BillTo() {
+		return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -134,6 +158,78 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 */
 	public EReference getPurchaseOrder_Items() {
 		return (EReference)purchaseOrderEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getUSAddress() {
+		return usAddressEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_Name() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_Street() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_City() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_State() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_Zip() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUSAddress_Country() {
+		return (EAttribute)usAddressEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getUSAddress_Po() {
+		return (EReference)usAddressEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -151,7 +247,25 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * @generated
 	 */
 	public EReference getItem_PurchaseOrder() {
-		return (EReference)itemEClass.getEStructuralFeatures().get(0);
+		return (EReference)itemEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getDate() {
+		return dateEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getSKU() {
+		return skuEDataType;
 	}
 
 	/**
@@ -160,7 +274,7 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * @generated
 	 */
 	public EAttribute getItem_ProductName() {
-		return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)itemEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -169,6 +283,15 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * @generated
 	 */
 	public EAttribute getItem_Quantity() {
+		return (EAttribute)itemEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getItem_USPrice() {
 		return (EAttribute)itemEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -177,8 +300,26 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getItem_Price() {
+	public EAttribute getItem_Comment() {
 		return (EAttribute)itemEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getItem_ShipDate() {
+		return (EAttribute)itemEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getItem_PartNum() {
+		return (EAttribute)itemEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -210,15 +351,31 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 
 		// Create classes and their features
 		purchaseOrderEClass = createEClass(PURCHASE_ORDER);
-		createEAttribute(purchaseOrderEClass, PURCHASE_ORDER__SHIP_TO);
-		createEAttribute(purchaseOrderEClass, PURCHASE_ORDER__BILL_TO);
+		createEReference(purchaseOrderEClass, PURCHASE_ORDER__SHIP_TO);
+		createEReference(purchaseOrderEClass, PURCHASE_ORDER__BILL_TO);
 		createEReference(purchaseOrderEClass, PURCHASE_ORDER__ITEMS);
 
+		usAddressEClass = createEClass(US_ADDRESS);
+		createEAttribute(usAddressEClass, US_ADDRESS__NAME);
+		createEAttribute(usAddressEClass, US_ADDRESS__STREET);
+		createEAttribute(usAddressEClass, US_ADDRESS__CITY);
+		createEAttribute(usAddressEClass, US_ADDRESS__STATE);
+		createEAttribute(usAddressEClass, US_ADDRESS__ZIP);
+		createEAttribute(usAddressEClass, US_ADDRESS__COUNTRY);
+		createEReference(usAddressEClass, US_ADDRESS__PO);
+
 		itemEClass = createEClass(ITEM);
-		createEReference(itemEClass, ITEM__PURCHASE_ORDER);
 		createEAttribute(itemEClass, ITEM__PRODUCT_NAME);
 		createEAttribute(itemEClass, ITEM__QUANTITY);
-		createEAttribute(itemEClass, ITEM__PRICE);
+		createEAttribute(itemEClass, ITEM__US_PRICE);
+		createEAttribute(itemEClass, ITEM__COMMENT);
+		createEAttribute(itemEClass, ITEM__SHIP_DATE);
+		createEAttribute(itemEClass, ITEM__PART_NUM);
+		createEReference(itemEClass, ITEM__PURCHASE_ORDER);
+
+		// Create data types
+		dateEDataType = createEDataType(DATE);
+		skuEDataType = createEDataType(SKU);
 	}
 
 	/**
@@ -255,15 +412,31 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(purchaseOrderEClass, PurchaseOrder.class, "PurchaseOrder", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPurchaseOrder_ShipTo(), theEcorePackage.getEString(), "shipTo", null, 1, 1, PurchaseOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPurchaseOrder_BillTo(), theEcorePackage.getEString(), "billTo", null, 1, 1, PurchaseOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPurchaseOrder_ShipTo(), this.getUSAddress(), null, "shipTo", null, 1, 1, PurchaseOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPurchaseOrder_BillTo(), this.getUSAddress(), null, "billTo", null, 1, 1, PurchaseOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPurchaseOrder_Items(), this.getItem(), this.getItem_PurchaseOrder(), "items", null, 0, -1, PurchaseOrder.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		initEClass(usAddressEClass, USAddress.class, "USAddress", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUSAddress_Name(), theEcorePackage.getEString(), "name", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUSAddress_Street(), theEcorePackage.getEString(), "street", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUSAddress_City(), theEcorePackage.getEString(), "city", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUSAddress_State(), theEcorePackage.getEString(), "state", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUSAddress_Zip(), theEcorePackage.getEInt(), "zip", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUSAddress_Country(), theEcorePackage.getEString(), "country", "US", 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUSAddress_Po(), this.getPurchaseOrder(), null, "po", null, 1, 1, USAddress.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(itemEClass, Item.class, "Item", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getItem_PurchaseOrder(), this.getPurchaseOrder(), this.getPurchaseOrder_Items(), "purchaseOrder", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItem_ProductName(), theEcorePackage.getEString(), "productName", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getItem_Quantity(), theEcorePackage.getEInt(), "quantity", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getItem_Price(), theEcorePackage.getEFloat(), "price", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItem_USPrice(), theEcorePackage.getEInt(), "USPrice", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItem_Comment(), theEcorePackage.getEString(), "comment", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItem_ShipDate(), this.getDate(), "shipDate", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getItem_PartNum(), this.getSKU(), "partNum", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getItem_PurchaseOrder(), this.getPurchaseOrder(), this.getPurchaseOrder_Items(), "purchaseOrder", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		// Initialize data types
+		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(skuEDataType, String.class, "SKU", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);

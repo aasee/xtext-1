@@ -31,6 +31,15 @@ public interface PoFactory extends EFactory {
 	PurchaseOrder createPurchaseOrder();
 
 	/**
+	 * Returns a new object of class '<em>US Address</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>US Address</em>'.
+	 * @generated
+	 */
+	USAddress createUSAddress();
+
+	/**
 	 * Returns a new object of class '<em>Item</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
