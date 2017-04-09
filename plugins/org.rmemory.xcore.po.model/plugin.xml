@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated po -->
+      <package
+            uri="http://www.rmemory.org/po/2017/ecore"
+            class="org.rmemory.xcore.po.model.po.PoPackage"
+            genModel="model/po.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated po -->
+      <factory
+            uri="http://www.rmemory.org/po/2017/ecore"
+            class="org.rmemory.xcore.po.model.po.provider.PoItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated po -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.rmemory.xcore.po.model.po.presentation.PoModelWizardID"
+            name="%_UI_PoModelWizard_label"
+            class="org.rmemory.xcore.po.model.po.presentation.PoModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PoModelFile.gif">
+         <description>%_UI_PoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated po -->
+      <editor
+            id="org.rmemory.xcore.po.model.po.presentation.PoEditorID"
+            name="%_UI_PoEditor_label"
+            icon="icons/full/obj16/PoModelFile.gif"
+            extensions="po"
+            class="org.rmemory.xcore.po.model.po.presentation.PoEditor"
+            contributorClass="org.rmemory.xcore.po.model.po.presentation.PoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

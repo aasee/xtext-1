@@ -25,6 +25,9 @@ class PurchaseOrder {
 	contains Item [*]items opposite purchaseOrder
 }
 
+//@Ecore(
+//	constraints='NonNegativeQuantity quantity'
+//)
 class Item {
 	refers PurchaseOrder[1] purchaseOrder opposite items
 	String[1] productName
