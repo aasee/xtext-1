@@ -28,6 +28,8 @@
       ecorePackage="po.ecore#/">
     <genDataTypes ecoreDataType="po.ecore#//Date"/>
     <genDataTypes ecoreDataType="po.ecore#//SKU"/>
+    <genDataTypes ecoreDataType="po.ecore#//Diag"/>
+    <genDataTypes ecoreDataType="po.ecore#//Map"/>
     <genClasses ecoreClass="po.ecore#//PurchaseOrder">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference po.ecore#//PurchaseOrder/shipTo"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference po.ecore#//PurchaseOrder/billTo"/>
@@ -50,6 +52,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/shipDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/partNum"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference po.ecore#//Item/purchaseOrder"/>
+      <genOperations ecoreOperation="po.ecore#//Item/isCommentValid">
+        <genParameters ecoreParameter="po.ecore#//Item/isCommentValid/diagnostics"/>
+        <genParameters ecoreParameter="po.ecore#//Item/isCommentValid/context"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

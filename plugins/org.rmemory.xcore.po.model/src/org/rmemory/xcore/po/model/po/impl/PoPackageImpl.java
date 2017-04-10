@@ -3,9 +3,12 @@
 package org.rmemory.xcore.po.model.po.impl;
 
 import java.util.Date;
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -61,6 +64,20 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * @generated
 	 */
 	private EDataType skuEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType diagEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType mapEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -266,6 +283,15 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getItem__IsCommentValid__DiagnosticChain_Map() {
+		return itemEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EDataType getDate() {
 		return dateEDataType;
 	}
@@ -277,6 +303,24 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 	 */
 	public EDataType getSKU() {
 		return skuEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getDiag() {
+		return diagEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDataType getMap() {
+		return mapEDataType;
 	}
 
 	/**
@@ -383,10 +427,13 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 		createEAttribute(itemEClass, ITEM__SHIP_DATE);
 		createEAttribute(itemEClass, ITEM__PART_NUM);
 		createEReference(itemEClass, ITEM__PURCHASE_ORDER);
+		createEOperation(itemEClass, ITEM___IS_COMMENT_VALID__DIAGNOSTICCHAIN_MAP);
 
 		// Create data types
 		dateEDataType = createEDataType(DATE);
 		skuEDataType = createEDataType(SKU);
+		diagEDataType = createEDataType(DIAG);
+		mapEDataType = createEDataType(MAP);
 	}
 
 	/**
@@ -445,9 +492,15 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 		initEAttribute(getItem_PartNum(), this.getSKU(), "partNum", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getItem_PurchaseOrder(), this.getPurchaseOrder(), this.getPurchaseOrder_Items(), "purchaseOrder", null, 1, 1, Item.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+		EOperation op = initEOperation(getItem__IsCommentValid__DiagnosticChain_Map(), theEcorePackage.getEBoolean(), "isCommentValid", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getDiag(), "diagnostics", 0, 1, !IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getMap(), "context", 0, 1, !IS_UNIQUE, IS_ORDERED);
+
 		// Initialize data types
 		initEDataType(dateEDataType, Date.class, "Date", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 		initEDataType(skuEDataType, String.class, "SKU", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(diagEDataType, DiagnosticChain.class, "Diag", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(mapEDataType, Map.class, "Map", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS, "java.util.Map<java.lang.Object, java.lang.Object>");
 
 		// Create resource
 		createResource(eNS_URI);
@@ -470,6 +523,12 @@ public class PoPackageImpl extends EPackageImpl implements PoPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "NonNegativeQuantity quantity Goober comment"
+		   });	
+		addAnnotation
+		  (getItem__IsCommentValid__DiagnosticChain_Map(), 
+		   source, 
+		   new String[] {
+			 "invariant", "true"
 		   });
 	}
 

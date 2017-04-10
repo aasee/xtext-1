@@ -42,12 +42,20 @@ public class PoValidator extends EObjectValidator {
 	public static final String DIAGNOSTIC_SOURCE = "org.rmemory.xcore.po.model.po";
 
 	/**
+	 * The {@link org.eclipse.emf.common.util.Diagnostic#getCode() code} for constraint 'Is Comment Valid' of 'Item'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public static final int ITEM__IS_COMMENT_VALID = 1;
+
+	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 0;
+	private static final int GENERATED_DIAGNOSTIC_CODE_COUNT = 1;
 
 	/**
 	 * A constant with a fixed name that can be used as the base value for additional hand written constants in a derived class.
@@ -85,6 +93,7 @@ public class PoValidator extends EObjectValidator {
 	 * @generated
 	 */
 	@Override
+	@SuppressWarnings("unchecked")
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
 			case PoPackage.PURCHASE_ORDER:
@@ -97,6 +106,10 @@ public class PoValidator extends EObjectValidator {
 				return validateDate((Date)value, diagnostics, context);
 			case PoPackage.SKU:
 				return validateSKU((String)value, diagnostics, context);
+			case PoPackage.DIAG:
+				return validateDiag((DiagnosticChain)value, diagnostics, context);
+			case PoPackage.MAP:
+				return validateMap((Map<Object, Object>)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -139,6 +152,7 @@ public class PoValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validateItem_quantity(item, diagnostics, context);
 		if (result || diagnostics != null) result &= validateItem_Goober(item, diagnostics, context);
 		if (result || diagnostics != null) result &= validateItem_comment(item, diagnostics, context);
+		if (result || diagnostics != null) result &= validateItem_isCommentValid(item, diagnostics, context);
 		return result;
 	}
 
@@ -255,6 +269,16 @@ public class PoValidator extends EObjectValidator {
 	}
 
 	/**
+	 * Validates the isCommentValid constraint of '<em>Item</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateItem_isCommentValid(Item item, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return item.isCommentValid(diagnostics, context);
+	}
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -269,6 +293,24 @@ public class PoValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateSKU(String sku, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDiag(DiagnosticChain diag, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMap(Map<Object, Object> map, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

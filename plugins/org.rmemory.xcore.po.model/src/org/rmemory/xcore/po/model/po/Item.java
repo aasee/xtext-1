@@ -3,6 +3,8 @@
 package org.rmemory.xcore.po.model.po;
 
 import java.util.Date;
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -55,6 +57,15 @@ public interface Item extends EObject {
 	 * @generated
 	 */
 	void setPurchaseOrder(PurchaseOrder value);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model unique="false" diagnosticsDataType="org.rmemory.xcore.po.model.po.Diag" diagnosticsUnique="false" contextDataType="org.rmemory.xcore.po.model.po.Map" contextUnique="false"
+	 *        annotation="http://www.eclipse.org/emf/2002/Ecore invariant='true'"
+	 * @generated
+	 */
+	boolean isCommentValid(DiagnosticChain diagnostics, Map<Object, Object> context);
 
 	/**
 	 * Returns the value of the '<em><b>Product Name</b></em>' attribute.

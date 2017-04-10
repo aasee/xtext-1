@@ -3,6 +3,8 @@
 package org.rmemory.xcore.po.model.po.impl;
 
 import java.util.Date;
+import java.util.Map;
+import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -78,6 +80,10 @@ public class PoFactoryImpl extends EFactoryImpl implements PoFactory {
 				return createDateFromString(eDataType, initialValue);
 			case PoPackage.SKU:
 				return createSKUFromString(eDataType, initialValue);
+			case PoPackage.DIAG:
+				return createDiagFromString(eDataType, initialValue);
+			case PoPackage.MAP:
+				return createMapFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +101,10 @@ public class PoFactoryImpl extends EFactoryImpl implements PoFactory {
 				return convertDateToString(eDataType, instanceValue);
 			case PoPackage.SKU:
 				return convertSKUToString(eDataType, instanceValue);
+			case PoPackage.DIAG:
+				return convertDiagToString(eDataType, instanceValue);
+			case PoPackage.MAP:
+				return convertMapToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -164,6 +174,43 @@ public class PoFactoryImpl extends EFactoryImpl implements PoFactory {
 	 */
 	public String convertSKUToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DiagnosticChain createDiagFromString(EDataType eDataType, String initialValue) {
+		return (DiagnosticChain)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDiagToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	public Map<Object, Object> createMapFromString(EDataType eDataType, String initialValue) {
+		return (Map<Object, Object>)super.createFromString(initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertMapToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(instanceValue);
 	}
 
 	/**

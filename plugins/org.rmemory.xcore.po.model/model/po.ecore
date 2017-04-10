@@ -14,6 +14,8 @@
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EDataType" name="Date" instanceClassName="java.util.Date"/>
   <eClassifiers xsi:type="ecore:EDataType" name="SKU" instanceClassName="java.lang.String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Diag" instanceClassName="org.eclipse.emf.common.util.DiagnosticChain"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Map" instanceTypeName="java.util.Map&lt;java.lang.Object, java.lang.Object>"/>
   <eClassifiers xsi:type="ecore:EClass" name="PurchaseOrder">
     <eStructuralFeatures xsi:type="ecore:EReference" name="shipTo" lowerBound="1"
         eType="#//USAddress" containment="true" resolveProxies="false"/>
@@ -42,6 +44,13 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="constraints" value="NonNegativeQuantity quantity Goober comment"/>
     </eAnnotations>
+    <eOperations name="isCommentValid" unique="false" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EBoolean">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="invariant" value="true"/>
+      </eAnnotations>
+      <eParameters name="diagnostics" unique="false" eType="#//Diag"/>
+      <eParameters name="context" unique="false" eType="#//Map"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="productName" unique="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="quantity" unique="false"

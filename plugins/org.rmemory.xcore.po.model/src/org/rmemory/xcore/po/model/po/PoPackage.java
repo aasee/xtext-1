@@ -5,6 +5,7 @@ package org.rmemory.xcore.po.model.po;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -287,13 +288,22 @@ public interface PoPackage extends EPackage {
 	int ITEM_FEATURE_COUNT = 7;
 
 	/**
+	 * The operation id for the '<em>Is Comment Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM___IS_COMMENT_VALID__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_OPERATION_COUNT = 0;
+	int ITEM_OPERATION_COUNT = 1;
 
 
 	/**
@@ -315,6 +325,27 @@ public interface PoPackage extends EPackage {
 	 * @generated
 	 */
 	int SKU = 4;
+
+
+	/**
+	 * The meta object id for the '<em>Diag</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.common.util.DiagnosticChain
+	 * @see org.rmemory.xcore.po.model.po.impl.PoPackageImpl#getDiag()
+	 * @generated
+	 */
+	int DIAG = 5;
+
+	/**
+	 * The meta object id for the '<em>Map</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see java.util.Map
+	 * @see org.rmemory.xcore.po.model.po.impl.PoPackageImpl#getMap()
+	 * @generated
+	 */
+	int MAP = 6;
 
 
 	/**
@@ -469,6 +500,16 @@ public interface PoPackage extends EPackage {
 	EReference getItem_PurchaseOrder();
 
 	/**
+	 * Returns the meta object for the '{@link org.rmemory.xcore.po.model.po.Item#isCommentValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Is Comment Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Comment Valid</em>' operation.
+	 * @see org.rmemory.xcore.po.model.po.Item#isCommentValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getItem__IsCommentValid__DiagnosticChain_Map();
+
+	/**
 	 * Returns the meta object for data type '{@link java.util.Date <em>Date</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -489,6 +530,28 @@ public interface PoPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getSKU();
+
+	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.DiagnosticChain <em>Diag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Diag</em>'.
+	 * @see org.eclipse.emf.common.util.DiagnosticChain
+	 * @model instanceClass="org.eclipse.emf.common.util.DiagnosticChain"
+	 * @generated
+	 */
+	EDataType getDiag();
+
+	/**
+	 * Returns the meta object for data type '{@link java.util.Map <em>Map</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>Map</em>'.
+	 * @see java.util.Map
+	 * @model instanceClass="java.util.Map<java.lang.Object, java.lang.Object>"
+	 * @generated
+	 */
+	EDataType getMap();
 
 	/**
 	 * Returns the meta object for the attribute '{@link org.rmemory.xcore.po.model.po.Item#getProductName <em>Product Name</em>}'.
@@ -698,6 +761,14 @@ public interface PoPackage extends EPackage {
 		EReference ITEM__PURCHASE_ORDER = eINSTANCE.getItem_PurchaseOrder();
 
 		/**
+		 * The meta object literal for the '<em><b>Is Comment Valid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ITEM___IS_COMMENT_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getItem__IsCommentValid__DiagnosticChain_Map();
+
+		/**
 		 * The meta object literal for the '<em>Date</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -716,6 +787,26 @@ public interface PoPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType SKU = eINSTANCE.getSKU();
+
+		/**
+		 * The meta object literal for the '<em>Diag</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.common.util.DiagnosticChain
+		 * @see org.rmemory.xcore.po.model.po.impl.PoPackageImpl#getDiag()
+		 * @generated
+		 */
+		EDataType DIAG = eINSTANCE.getDiag();
+
+		/**
+		 * The meta object literal for the '<em>Map</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see java.util.Map
+		 * @see org.rmemory.xcore.po.model.po.impl.PoPackageImpl#getMap()
+		 * @generated
+		 */
+		EDataType MAP = eINSTANCE.getMap();
 
 		/**
 		 * The meta object literal for the '<em><b>Product Name</b></em>' attribute feature.

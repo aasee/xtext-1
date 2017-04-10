@@ -20,6 +20,8 @@ package po
 
 type Date wraps java.util.Date
 type SKU wraps java.lang.String
+type Diag wraps org.eclipse.emf.common.util.DiagnosticChain
+type Map wraps java.util.Map<Object,Object>
 
 class PurchaseOrder {
 	contains USAddress[1] shipTo
@@ -46,6 +48,8 @@ class Item {
 	int[1] quantity
 	int[1] USPrice
 	String[1] comment
+	@Ecore(invariant="true")
+	op boolean isCommentValid(Diag diagnostics, Map context)
 	Date[1] shipDate
 	SKU[1] partNum
 	
