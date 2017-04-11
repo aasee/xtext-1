@@ -41,7 +41,7 @@ class USAddress {
 }
 
 @Ecore(
-	constraints='NonNegativeQuantity quantity Goober comment'
+	constraints='NonNegativeQuantity quantity'
 )
 class Item {
 	String[1] productName
