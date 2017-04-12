@@ -2,30 +2,19 @@
  */
 package org.rmemory.xcore.po.model.po.impl;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
-import java.util.Map;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.BasicDiagnostic;
-import org.eclipse.emf.common.util.Diagnostic;
-import org.eclipse.emf.common.util.DiagnosticChain;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-import org.eclipse.emf.ecore.util.EObjectValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.rmemory.xcore.po.model.po.Item;
 import org.rmemory.xcore.po.model.po.PoPackage;
 import org.rmemory.xcore.po.model.po.PurchaseOrder;
-import org.rmemory.xcore.po.model.po.util.PoValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -235,31 +224,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, PoPackage.ITEM__PURCHASE_ORDER, newPurchaseOrder, newPurchaseOrder));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isCommentValid(DiagnosticChain diagnostics, Map<Object, Object> context) {
-		// TODO: implement this method
-		// -> specify the condition that violates the invariant
-		// -> verify the details of the diagnostic, including severity and message
-		// Ensure that you remove @generated or mark it @generated NOT
-		if (false) {
-			if (diagnostics != null) {
-				diagnostics.add
-					(new BasicDiagnostic
-						(Diagnostic.ERROR,
-						 PoValidator.DIAGNOSTIC_SOURCE,
-						 PoValidator.ITEM__IS_COMMENT_VALID,
-						 EcorePlugin.INSTANCE.getString("_UI_GenericInvariant_diagnostic", new Object[] { "isCommentValid", EObjectValidator.getObjectLabel(this, context) }),
-						 new Object [] { this }));
-			}
-			return false;
-		}
-		return true;
 	}
 
 	/**
@@ -549,21 +513,6 @@ public class ItemImpl extends MinimalEObjectImpl.Container implements Item {
 				return basicGetPurchaseOrder() != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	@SuppressWarnings("unchecked")
-	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
-		switch (operationID) {
-			case PoPackage.ITEM___IS_COMMENT_VALID__DIAGNOSTICCHAIN_MAP:
-				return isCommentValid((DiagnosticChain)arguments.get(0), (Map<Object, Object>)arguments.get(1));
-		}
-		return super.eInvoke(operationID, arguments);
 	}
 
 	/**
