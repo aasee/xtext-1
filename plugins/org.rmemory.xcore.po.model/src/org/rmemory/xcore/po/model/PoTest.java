@@ -20,6 +20,15 @@ public class PoTest {
 		po.setBillTo(billTo);
 		po.setShipTo(shipTo);
 		
+		/*
+		 * 1) Rules that run on the UI DM which can be invoked by CLI
+		 * 
+		 * 2) The user modifies something in the UI, we should be able validate in 
+		 * a reasonable way, and communicate 
+		 * 
+		 * 3) The file should never be saved in incorrect state
+		 */
+		
 		Item item = factory.createItem();
 		
 		item.setComment("this is a comment");

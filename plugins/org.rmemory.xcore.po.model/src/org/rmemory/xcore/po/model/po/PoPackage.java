@@ -5,6 +5,7 @@ package org.rmemory.xcore.po.model.po;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -287,13 +288,22 @@ public interface PoPackage extends EPackage {
 	int ITEM_FEATURE_COUNT = 7;
 
 	/**
+	 * The operation id for the '<em>Is Price Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ITEM___IS_PRICE_VALID__DIAGNOSTICCHAIN_MAP = 0;
+
+	/**
 	 * The number of operations of the '<em>Item</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ITEM_OPERATION_COUNT = 0;
+	int ITEM_OPERATION_COUNT = 1;
 
 
 	/**
@@ -488,6 +498,16 @@ public interface PoPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getItem_PurchaseOrder();
+
+	/**
+	 * Returns the meta object for the '{@link org.rmemory.xcore.po.model.po.Item#isPriceValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map) <em>Is Price Valid</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Price Valid</em>' operation.
+	 * @see org.rmemory.xcore.po.model.po.Item#isPriceValid(org.eclipse.emf.common.util.DiagnosticChain, java.util.Map)
+	 * @generated
+	 */
+	EOperation getItem__IsPriceValid__DiagnosticChain_Map();
 
 	/**
 	 * Returns the meta object for data type '{@link java.util.Date <em>Date</em>}'.
@@ -739,6 +759,14 @@ public interface PoPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ITEM__PURCHASE_ORDER = eINSTANCE.getItem_PurchaseOrder();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Price Valid</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation ITEM___IS_PRICE_VALID__DIAGNOSTICCHAIN_MAP = eINSTANCE.getItem__IsPriceValid__DiagnosticChain_Map();
 
 		/**
 		 * The meta object literal for the '<em>Date</em>' data type.

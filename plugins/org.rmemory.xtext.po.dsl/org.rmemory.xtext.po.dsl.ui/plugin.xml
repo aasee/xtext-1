@@ -1,6 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.0"?>
 <plugin>
+    <extension
+         point="org.eclipse.ui.commands">
+      <command
+            name="Do a Purchase Order"
+            id="org.rmemory.xtext.po.dsl.ui.commands.poCommand">
+      </command>
+   </extension>
+
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="org.rmemory.xtext.po.dsl.ui.commands.poCommand"
+            class="org.rmemory.xtext.po.dsl.ui.ButtonPusher">
+      </handler>
+   </extension>
+   
+      <extension point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         	<menu
+               label="Purchase Order"
+               mnemonic="P"
+               id="org.rmemory.xtext.po.dsl.ui.purchaseOrder.doStuff.id">
+         	   <command
+                 	commandId="org.rmemory.xtext.po.dsl.ui.commands.poCommand"
+               		mnemonic="F"
+               		label="Create Purchase Order">
+         	   </command>
+         	</menu>
+      </menuContribution>
+    </extension>
+   
 	<extension
 		point="org.eclipse.ui.editors">
 		<editor

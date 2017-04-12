@@ -40,16 +40,16 @@ class USAddress {
 	refers PurchaseOrder[1] po
 }
 
-//@Ecore(
-//	constraints='NonNegativeQuantity quantity'
-//)
+@Ecore(
+	constraints='NonNegativeQuantity ShipDateAfterOrderDate'
+)
 class Item {
 	String[1] productName
 	int[1] quantity
+	@Ecore(invariant="true")
+	op boolean isPriceValid(Diag diagnostics, Map context)
 	int[1] USPrice
 	String[1] comment
-//	@Ecore(invariant="true")
-//	op boolean isCommentValid(Diag diagnostics, Map context)
 	Date[1] shipDate
 	SKU[1] partNum
 	

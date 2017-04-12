@@ -52,6 +52,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/shipDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute po.ecore#//Item/partNum"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference po.ecore#//Item/purchaseOrder"/>
+      <genOperations ecoreOperation="po.ecore#//Item/isPriceValid">
+        <genParameters ecoreParameter="po.ecore#//Item/isPriceValid/diagnostics"/>
+        <genParameters ecoreParameter="po.ecore#//Item/isPriceValid/context"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
